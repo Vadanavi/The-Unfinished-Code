@@ -15,7 +15,7 @@ function Hero() {
         <div className="hero-meta">
           <span>Scroll dossier</span>
           <span>4 acts</span>
-          <span>Timeline, redactions, counterfactuals</span>
+          <span>Timeline, redactions, legal afterlives</span>
         </div>
       </div>
     </header>

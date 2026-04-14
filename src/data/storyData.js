@@ -21,63 +21,127 @@ export const actOneImages = [
 
 export const actTwoVoices = [
   {
-    name: 'Orthodox Hindu MP',
+    name: 'Conservative parliamentarian',
     style: 'mp',
     label: 'Parliament Speech',
     excerpt:
-      'The state, he argued, should not wrench sacred domestic order into statutory form at the pace of political impatience.',
+      'He frames delay as prudence, but the caution is really about preserving who gets to control the joint family and its assets.',
     content:
-      'Framed as caution, the parliamentary objection cast the bill as a dangerous compression of custom into law. Speeches leaned on continuity, scriptural legitimacy, and the fear that rapid reform would rupture social stability more than it would deliver justice.',
+      'In legislative language, resistance appeared as a plea for continuity and cultural restraint. But what sat underneath was the fear that statutory reform would reorder authority inside the family, weaken male control over shared property, and make private hierarchy answerable to constitutional principle.',
+  },
+  {
+    name: 'Upper-caste male property-holder',
+    style: 'holder',
+    label: 'Estate Ledger',
+    excerpt:
+      'His anxiety is not abstract tradition. It is the possibility that inheritance through women could move land, status, and lineage outside controlled caste channels.',
+    content:
+      'For the property-holder, the bill threatened the architecture of family power. If daughters inherited more fully and marriage choices widened, property could leave the tightly guarded circuits through which caste and male authority reproduced themselves across generations.',
   },
   {
     name: 'Hindu widow',
     style: 'widow',
     label: 'Personal Letter',
     excerpt:
-      'Her letter does not speak in abstractions. It asks why survival should depend on the goodwill of male relatives.',
+      'Her testimony makes the stakes concrete: dependence, shelter, and dignity all hinge on whether the law treats her claim as real or charitable.',
     content:
-      'In the private register of loss and dependency, widowhood exposed the violence hidden inside inheritance rules. Reform meant food, shelter, legal standing, and a life no longer suspended between charity and social control.',
+      'Widowhood exposed the violence hidden in inheritance rules. Her position shows that the so-called defence of tradition depended on keeping women vulnerable to the discretion of male kin, even when reform promised only a minimal condition of security and legal standing.',
+  },
+];
+
+export const actTwoAnxieties = [
+  {
+    title: 'Male control over joint family property',
+    detail:
+      'The bill threatened the everyday mechanics of coparcenary power by questioning whether patrimony should remain governed through an exclusively male line.',
   },
   {
-    name: "Women's rights activist",
-    style: 'activist',
-    label: 'Pamphlet',
-    excerpt:
-      'Pamphlets recast the bill as unfinished freedom: political independence without family reform was only half a revolution.',
-    content:
-      'Activists stitched together street rhetoric and constitutional language. The demand was clear: rights inside the home must not remain exempt from democracy, and delay should be read as a choice to preserve inequality.',
+    title: 'Property crossing caste boundaries',
+    detail:
+      "Women's inheritance and marriage choices raised the possibility that land, wealth, and status might move beyond the caste lines that had long stabilized elite control.",
   },
   {
-    name: 'Newspaper journalist',
-    style: 'journalist',
-    label: 'News Column',
-    excerpt:
-      'Daily reporting turned legal complexity into spectacle, measuring the bill through resignations, protests, cabinet strategy, and headlines.',
-    content:
-      "The press amplified conflict. Some columns treated reform as a modernizing necessity; others sold controversy. In both cases, journalism helped build the bill's public life as a national drama rather than a narrow technical reform.",
+    title: 'Political fear of attacking Hindu tradition',
+    detail:
+      'Opponents converted material anxieties into civilizational language, presenting their defence of authority as a defence of religion and social order.',
   },
+];
+
+export const actThreeContradictions = [
+  {
+    title: 'Section 14',
+    subtitle: 'Absolute ownership in theory',
+    body:
+      "The 1956 framework recognised women's property as their own in formal terms, announcing a language of equality that looked far more transformative on paper than in lived succession practice.",
+  },
+  {
+    title: 'Section 6',
+    subtitle: 'Male survivorship in operation',
+    body:
+      "By preserving the Mitakshara coparcenary structure, the Act often ensured that the property at issue never meaningfully reached women in the first place, limiting the force of Section 14's promise.",
+  },
+  {
+    title: 'Section 30',
+    subtitle: 'Testamentary disinheritance',
+    body:
+      'The power to will away property supplied another route through which patriarchal preference could continue, especially against daughters whose claims were already institutionally weak.',
+  },
+  {
+    title: 'After the amendment',
+    subtitle: 'Formal equality remains partial',
+    body:
+      'As Bina Agarwal and later feminist scholarship argue, even the 2005 amendment is better understood as an important but incomplete step toward substantive equality rather than the closure of Ambedkar’s project.',
+  },
+];
+
+export const actFourLegacyNotes = [
+  {
+    year: '1986',
+    title: 'State-level opening',
+    detail:
+      'Andhra Pradesh begins the state amendment trajectory, showing that the centre did not settle the problem and that inherited compromise kept returning for repair.',
+  },
+  {
+    year: '2005',
+    title: 'Central amendment',
+    detail:
+      "Daughters' coparcenary rights are formally expanded, but statutory recognition does not dissolve the social and procedural barriers that still govern access.",
+  },
+  {
+    year: '2020',
+    title: 'Vineeta Sharma',
+    detail:
+      'The Supreme Court clarifies that daughters hold coparcenary rights by birth, yet doctrinal progress still meets family pressure, litigation costs, and exclusion from management on the ground.',
+  },
+];
+
+export const actFourContinuities = [
+  'Relinquishment deeds signed under family pressure still convert formal entitlement into coerced surrender.',
+  'Women remain de facto excluded from the management practices through which joint family property is actually controlled.',
+  'Caste location, land concentration, and unequal access to legal process continue to shape who can turn paper rights into usable claims.',
+  'The distance between formal equality and substantive equality remains the central measure of the reform’s unfinished legacy.',
 ];
 
 export const actThreeLaws = [
   {
     title: 'Hindu Marriage Act',
     year: '1955',
-    note: 'Codified marriage, divorce, restitution, and monogamy within a narrower statutory frame.',
+    note: 'Codified marriage and divorce separately, translating the unified bill into a narrower statutory fragment.',
   },
   {
     title: 'Hindu Succession Act',
     year: '1956',
-    note: 'Reworked inheritance, but left major limits in coparcenary rights that would endure for decades.',
+    note: 'Introduced formal equality language while preserving structural limits in coparcenary and testamentary practice.',
   },
   {
     title: 'Hindu Minority & Guardianship Act',
     year: '1956',
-    note: 'Defined guardianship through a framework that remained deeply gendered in practice.',
+    note: 'Addressed guardianship through a framework that continued to place authority inside gendered hierarchies.',
   },
   {
     title: 'Hindu Adoptions & Maintenance Act',
     year: '1956',
-    note: 'Separated adoption and maintenance into a distinct legal instrument rather than a unified code.',
+    note: 'Separated dependency, care, and adoption into another distinct legislative compartment rather than a unified code.',
   },
 ];
 
@@ -159,32 +223,21 @@ export const timelineEvents = [
     imageLabel: 'Act folios',
   },
   {
+    year: '1986',
+    title: 'Andhra Pradesh amendment',
+    headline: 'State reform reopens the question of daughters and coparcenary rights.',
+    imageLabel: 'State gazette',
+  },
+  {
     year: '2005',
     title: 'Succession amendment',
     headline: "Daughters' coparcenary rights are finally strengthened after decades of asymmetry.",
     imageLabel: 'Amendment clipping',
   },
-];
-
-export const counterfactualOptions = [
   {
-    title: 'If the Hindu Code Bill Passed as Written',
-    tone: 'optimistic',
-    deck: 'A front page from a more ambitious republic.',
-    bullets: [
-      'Equal inheritance rights normalized from the early 1950s.',
-      "Women's property claims enter family bargaining far earlier.",
-      'Expanded legal autonomy likely shifts education, work, and household negotiation.',
-    ],
-  },
-  {
-    title: 'If the Bill Never Passed',
-    tone: 'grim',
-    deck: 'A republic that leaves patriarchal private law largely intact.',
-    bullets: [
-      'Mitakshara dominance shapes succession for much longer.',
-      'Divorce rights remain fragmented and severely restricted.',
-      'Gender justice in family law faces a steeper and slower political climb.',
-    ],
+    year: '2020',
+    title: 'Vineeta Sharma v. Rakesh Sharma',
+    headline: 'The Supreme Court confirms that daughters hold coparcenary rights by birth, not by the accident of a father surviving to 2005.',
+    imageLabel: 'Judgment file',
   },
 ];
