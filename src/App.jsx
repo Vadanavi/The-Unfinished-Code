@@ -54,7 +54,7 @@ function App() {
         <ActSection
           actLabel="Act I"
           title="The Vision (1948-1951)"
-          voice="Narrated through the drafting notes and reformist imagination of B.R. Ambedkar."
+          voice="Dr. B.R. Ambedkar, serving as India’s first Law Minister, approached the Hindu Code Bill not as a piecemeal legal correction but as a civilizational intervention. The bill was introduced in the constituent assembly on April 11th, 1947, and was then moved by the select committee report on April 9th, 1948. This was followed by 4 years of deliberation and eventually remained inconclusive. In Ambedkar own words, “The bill died unused and unsung”. Therefore, he tendered his resignation on 27th September 1951, to the Prime Minister Pandit Jawahar Lal Nehru ."
           theme="vision"
           aside="Typed across yellow legal paper, this act frames the Hindu Code Bill as a democratic rewrite of kinship, property, and citizenship."
         >
@@ -62,7 +62,7 @@ function App() {
             <div className="document-panel legal-paper">
               <span className="document-kicker">Drafting Room, New Delhi, 1948</span>
               <TypewriterText
-                text="I measure reform not by rhetoric, but by whether the law reaches the widow, the daughter, the deserted wife, and the person trapped inside custom."
+                text="FOOD FOOD FOOD. HELLO WORLD. WE HAVE TO SUBMIT THIS SOOOOOOOOOON!!"
                 className="manifesto-quote"
               />
               <div className="annotation-group">
@@ -77,7 +77,9 @@ function App() {
             <div className="reform-list">
               <article className="reform-item">
                 <h3>Equal inheritance</h3>
-                <p>Daughters and widows would stand closer to sons in succession, challenging entrenched coparcenary privilege.</p>
+                <p>The Mitakshara system of Hindu joint family property was Ambedkar’s primary target because it was the legal mechanism through which gender inequality reproduced itself across generations. As per the Mitakshara system, women could not succeed to joint family property. A women, whether wife, widow, mother, daughter, or sister was only entitled to maintenance, remaining at the mercy of surviving male coparceners. The coparcenary was an exclusively male inner circle: joint ownership was the privilege of male members in the family, and females were precluded from acquiring any interest in coparcenary property. 
+This was not incidental but structurally ordained. The Dharmashastra position, as traced in the sources, held that sisters received no share in patrimony if they had brothers. The Mitakshara school extended this exclusion not through individual will but through an automatic, birth-based system: sons acquired interest in ancestral property at birth, while daughters acquired nothing. Ambedkar understood that no political equality guaranteed by the Constitution could be real while women remained economically dependent by the operation of personal law. He codified Hindu personal law precisely because religion was a site of preservation and reproduction of inequalities. The dominant caste groups projected Hindu religion as a matter of identity alone, ruling out how the very bases of their caste and religious identities were built upon the subordination of women. The Bill's attack on the coparcenary was therefore simultaneously an attack on caste patriarchy.
+</p>
               </article>
               <article className="reform-item">
                 <h3>Divorce rights</h3>
@@ -257,7 +259,7 @@ function App() {
 
         <section className="feature-section standalone-feature standalone-gap">
           <div className="section-heading standalone-heading">
-            <span className="eyebrow">Independent Component</span>
+            <span className="eyebrow"></span>
             <h2>Legacy timeline</h2>
             <p>
               This is the year-bar timeline from Act IV, now pulled into its own space so it reads as a separate
@@ -276,7 +278,7 @@ function App() {
 
         <section className="feature-section standalone-feature standalone-timeline">
           <div className="section-heading standalone-heading">
-            <span className="eyebrow">Independent Component</span>
+            <span className="eyebrow"></span>
             <h2>Archive timeline</h2>
             <p>
               This separate archive follows the legacy timeline and tracks the larger chronology through major
