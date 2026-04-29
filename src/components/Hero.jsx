@@ -7,6 +7,7 @@ function Hero() {
     <header ref={ref} className={`hero ${isVisible ? 'is-visible' : ''}`}>
       <div className="hero-inner">
         <p className="eyebrow">Interactive legal documentary</p>
+
         <h1 className="hero-title">
           <span className="hero-title-lead">The</span>{' '}
           <span className="hero-title-core">Unfinished</span>{' '}
@@ -14,7 +15,8 @@ function Hero() {
         </h1>
         <p className="hero-subtitle">The Hindu Code Bill Debates (1948-1956)</p>
         <p className="hero-summary">
-          A scroll-driven archive about law reform, resistance, fracture, and the promises that outlived the statute book.
+          A scroll-driven archive about law reform, resistance, fracture, and the promises that outlived the statute
+          book.
         </p>
         <div className="hero-meta">
           <span>Scroll dossier</span>
