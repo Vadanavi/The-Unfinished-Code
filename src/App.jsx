@@ -1,7 +1,6 @@
 import Hero from './components/Hero';
 import ActSection from './components/ActSection';
 import VoiceCard from './components/VoiceCard';
-import Timeline from './components/Timeline';
 import RedactedDocument from './components/RedactedDocument';
 import GapTimeline from './components/GapTimeline';
 import Footer from './components/Footer';
@@ -15,9 +14,7 @@ import {
   actTwoVoices,
   actTwoAnxieties,
   actThreeHighlights,
-  actThreeLaws,
   gapItems,
-  timelineEvents,
 } from './data/storyData';
 
 function App() {
@@ -44,7 +41,7 @@ function App() {
   </a>
 
   <a href="/flowchart.html" target="_blank">
-    <button className="game-btn"> Flowchart</button>
+    <button className="game-btn"> timeline</button>
   </a>
 </div>
       
@@ -54,7 +51,7 @@ function App() {
         <ActSection
           actLabel="Act I"
           title="The Vision (1948-1951)"
-          voice="Dr. B.R. Ambedkar, serving as India’s first Law Minister, approached the Hindu Code Bill not as a piecemeal legal correction but as a civilizational intervention. The bill was introduced in the constituent assembly on April 11th, 1947, and was then moved by the select committee report on April 9th, 1948. This was followed by 4 years of deliberation and eventually remained inconclusive. In Ambedkar own words, “The bill died unused and unsung”. Therefore, he tendered his resignation on 27th September 1951, to the Prime Minister Pandit Jawahar Lal Nehru ."
+          voice="Dr. B.R. Ambedkar, serving as India’s first Law Minister."
           theme="vision"
           aside="Typed across yellow legal paper, this act frames the Hindu Code Bill as a democratic rewrite of kinship, property, and citizenship."
         >
@@ -77,21 +74,15 @@ function App() {
             <div className="reform-list">
               <article className="reform-item">
                 <h3>Equal inheritance</h3>
-                <p>The Mitakshara system of Hindu joint family property was Ambedkar’s primary target because it was the legal mechanism through which gender inequality reproduced itself across generations. As per the Mitakshara system, women could not succeed to joint family property. A women, whether wife, widow, mother, daughter, or sister was only entitled to maintenance, remaining at the mercy of surviving male coparceners. The coparcenary was an exclusively male inner circle: joint ownership was the privilege of male members in the family, and females were precluded from acquiring any interest in coparcenary property. 
-This was not incidental but structurally ordained. The Dharmashastra position, as traced in the sources, held that sisters received no share in patrimony if they had brothers. The Mitakshara school extended this exclusion not through individual will but through an automatic, birth-based system: sons acquired interest in ancestral property at birth, while daughters acquired nothing. Ambedkar understood that no political equality guaranteed by the Constitution could be real while women remained economically dependent by the operation of personal law. He codified Hindu personal law precisely because religion was a site of preservation and reproduction of inequalities. The dominant caste groups projected Hindu religion as a matter of identity alone, ruling out how the very bases of their caste and religious identities were built upon the subordination of women. The Bill's attack on the coparcenary was therefore simultaneously an attack on caste patriarchy.
-</p>
+                <p>The Mitakshara system of Hindu joint family property was Ambedkar’s primary target because it was the legal mechanism through which gender inequality reproduced itself across generations. As per the Mitakshara system, women could not succeed to joint family property. A women, whether wife, widow, mother, daughter, or sister was only entitled to maintenance, remaining at the mercy of surviving male coparceners. The coparcenary was an exclusively male inner circle: joint ownership was the privilege of male members in the family, and females were precluded from acquiring any interest in coparcenary property. </p>
               </article>
               <article className="reform-item">
                 <h3>Divorce rights</h3>
-                <p>Marriage would become dissoluble under law, not a unilateral moral sentence borne by women.</p>
+                <p>The cartoons that circulated during the Bill's parliamentary debates are a measure of how deeply property reform threatened the social order. Orthodox resistance from Hindu Mahasabha and RSS framed the Bill not as a legal reform but as a civilisational attack. Jan Sangh Leader Shyama Prasad Mookerjee issued public statements against the bill, arguing it would undermine Hindu culture. Within Parliament, one member, Ramnarayan Singh stated: "Despite the challenges posed by Buddhism, Islam and Christianity, the Vedic religion did not perish... we have now Pandit Nehru's administration whose representative Dr. Ambedkar wants to abrogate with a single stroke all those rules which have existed since the beginning of the world."</p>
               </article>
               <article className="reform-item">
                 <h3>Abolition of caste custom</h3>
-                <p>Customary law anchored in caste practice would yield to a more uniform statutory code.</p>
-              </article>
-              <article className="reform-item">
-                <h3>Marriage and property reform</h3>
-                <p>Domestic relations would be pulled into the constitutional era through rights, duties, and recorded legal remedies.</p>
+                <p>When the Bill was blocked by conservative opposition, Ambedkar resigned from the Cabinet in September 1951 as a protest against the denial of women's rights. His resignation letter is among the most revealing documents in Indian legal history. It makes explicit that he regarded the defeat of the property clauses not as a political setback but as a moral failure of the new republic. In his resignation statement, Ambedkar articulated the core principle that had driven is entire fight. He argued that allowing inequality between classes and between sexes, the very foundation of Hindu society, to continue unchallenged, while passing economic legislation, was to mock the Constitution itself and build a grand structure on a rotten foundation</p>
               </article>
             </div>
 
@@ -169,23 +160,6 @@ This was not incidental but structurally ordained. The Dharmashastra position, a
                   </article>
                 ))}
               </div>
-            </div>
-
-            <div className="fracture-stack">
-              <article className="split-diagram document-panel">
-                <span className="document-kicker">From unified code to separate statutes</span>
-                <div className="diagram-root">Original Hindu Code Bill</div>
-                <div className="diagram-arrow" />
-                <div className="law-grid">
-                  {actThreeLaws.map((law) => (
-                    <div className="law-card" key={law.title}>
-                      <strong>{law.title}</strong>
-                      <span>{law.year}</span>
-                      <p>{law.note}</p>
-                    </div>
-                  ))}
-                </div>
-              </article>
             </div>
           </div>
         </ActSection>
@@ -276,24 +250,6 @@ This was not incidental but structurally ordained. The Dharmashastra position, a
           </div>
         </section>
 
-        <section className="feature-section standalone-feature standalone-timeline">
-          <div className="section-heading standalone-heading">
-            <span className="eyebrow"></span>
-            <h2>Archive timeline</h2>
-            <p>
-              This separate archive follows the legacy timeline and tracks the larger chronology through major
-              legislative and judicial turning points.
-            </p>
-          </div>
-          <div className="timeline-endcap">
-            <div className="section-heading section-heading-inline">
-              <span className="eyebrow">Archive timeline</span>
-              <h2>Reform after reform</h2>
-              <p>The timeline now closes the sequence from outside the act, tracing how the same unresolved struggle keeps returning across decades.</p>
-            </div>
-            <Timeline events={timelineEvents} />
-          </div>
-        </section>
       </main>
 
       <Footer />

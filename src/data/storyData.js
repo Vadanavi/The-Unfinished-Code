@@ -4,18 +4,21 @@ export const actOneImages = [
     year: '1948',
     caption: 'Drafting power was never neutral; every clause moved through committees, petitions, and public pressure.',
     align: 'top',
+    image: '/images/mitakshara-coparcenary.png',
   },
   {
     title: 'Parliament file',
     year: '1951',
     caption: 'Debate transformed family law into a national referendum on social reform, religion, and constitutional authority.',
     align: 'center',
+    image: '/images/parliament-file.png',
   },
   {
     title: 'Marked legal paper',
     year: '1950',
     caption: 'Annotations suggest a law under siege: underlines, objections, and appeals to delay surround the reform text.',
     align: 'bottom',
+    image: '/images/legal-paper.png',
   },
 ];
 
@@ -86,12 +89,6 @@ export const actThreeContradictions = [
     body:
       'The power to will away property supplied another route through which patriarchal preference could continue, especially against daughters whose claims were already institutionally weak.',
   },
-  {
-    title: 'After the amendment',
-    subtitle: 'Formal equality remains partial',
-    body:
-      'As Bina Agarwal and later feminist scholarship argue, even the 2005 amendment is better understood as an important but incomplete step toward substantive equality rather than the closure of Ambedkar’s project.',
-  },
 ];
 
 export const actFourLegacyNotes = [
@@ -120,29 +117,6 @@ export const actFourContinuities = [
   'Women remain de facto excluded from the management practices through which joint family property is actually controlled.',
   'Caste location, land concentration, and unequal access to legal process continue to shape who can turn paper rights into usable claims.',
   'The distance between formal equality and substantive equality remains the central measure of the reform’s unfinished legacy.',
-];
-
-export const actThreeLaws = [
-  {
-    title: 'Hindu Marriage Act',
-    year: '1955',
-    note: 'Codified marriage and divorce separately, translating the unified bill into a narrower statutory fragment.',
-  },
-  {
-    title: 'Hindu Succession Act',
-    year: '1956',
-    note: 'Introduced formal equality language while preserving structural limits in coparcenary and testamentary practice.',
-  },
-  {
-    title: 'Hindu Minority & Guardianship Act',
-    year: '1956',
-    note: 'Addressed guardianship through a framework that continued to place authority inside gendered hierarchies.',
-  },
-  {
-    title: 'Hindu Adoptions & Maintenance Act',
-    year: '1956',
-    note: 'Separated dependency, care, and adoption into another distinct legislative compartment rather than a unified code.',
-  },
 ];
 
 export const actThreeHighlights = [
