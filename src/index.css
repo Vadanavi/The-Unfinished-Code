@@ -524,6 +524,11 @@ textarea {
   line-height: 1.8;
   margin: 1rem 0 1.4rem;
 }
+.typewriter.section-aside {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin: 0;
+}
 .type-cursor {
   color: var(--red);
   animation: blink 1s steps(2, start) infinite;
@@ -1877,4 +1882,66 @@ body::after  { opacity: 0.12; mix-blend-mode: multiply; }
 .legacy-note:nth-child(3) h3,
 .gap-row.partial h3 {
   color: #5a3a22;  /* deep brown */
+}
+
+/* Act II readability pass: keep the parchment mood, but make long text easier to scan. */
+.analysis-panel-plain,
+.anxiety-card {
+  color: #4f3826;
+}
+
+.analysis-panel-plain {
+  background:
+    linear-gradient(180deg, rgba(246, 231, 199, 0.92), rgba(223, 192, 147, 0.72)),
+    radial-gradient(ellipse at 50% 45%, #f7e8c8 0%, #e8c996 62%, #c99d68 100%);
+}
+
+.analysis-panel-plain .document-kicker,
+.anxiety-index {
+  color: #8b2f28;
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.45;
+  opacity: 0.95;
+}
+
+.analysis-panel-plain p,
+.anxiety-card p {
+  color: rgba(61, 42, 26, 0.8);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.anxiety-card {
+  padding: 1.35rem 1.45rem;
+}
+
+.anxiety-card h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.18;
+  margin-bottom: 1rem;
+  color: #5f442d;
+}
+
+.anxiety-card:nth-child(1) {
+  background:
+    linear-gradient(180deg, rgba(242, 221, 187, 0.9), rgba(204, 156, 99, 0.62)),
+    radial-gradient(ellipse at 50% 40%, #f4e1b9 0%, #d8b07a 66%, #a77845 100%);
+}
+
+.anxiety-card:nth-child(2) {
+  background:
+    linear-gradient(180deg, rgba(239, 227, 190, 0.9), rgba(190, 171, 106, 0.62)),
+    radial-gradient(ellipse at 50% 40%, #f0e4ba 0%, #d0bd7f 66%, #9b854c 100%);
+}
+
+.anxiety-card:nth-child(3) {
+  background:
+    linear-gradient(180deg, rgba(244, 220, 188, 0.9), rgba(203, 143, 102, 0.62)),
+    radial-gradient(ellipse at 50% 40%, #f3dbb2 0%, #d8a16c 66%, #a26743 100%);
 }

@@ -2,21 +2,21 @@ export const actOneImages = [
   {
     title: 'Committee portrait',
     year: '1948',
-    caption: 'Drafting power was never neutral; every clause moved through committees, petitions, and public pressure.',
+    caption: '',
     align: 'top',
     image: '/images/mitakshara-coparcenary.png',
   },
   {
     title: 'Parliament file',
     year: '1951',
-    caption: 'Debate transformed family law into a national referendum on social reform, religion, and constitutional authority.',
+    caption: '',
     align: 'center',
     image: '/images/parliament-file.png',
   },
   {
     title: 'Marked legal paper',
     year: '1950',
-    caption: 'Annotations suggest a law under siege: underlines, objections, and appeals to delay surround the reform text.',
+    caption: '',
     align: 'bottom',
     image: '/images/legal-paper.png',
   },
@@ -24,22 +24,22 @@ export const actOneImages = [
 
 export const actTwoVoices = [
   {
-    name: 'Conservative parliamentarian',
+    name: 'Hari Vinayak Pataskar - Law minister',
     style: 'mp',
-    label: 'Parliament Speech',
+    label: 'Lok Sabha Debates, Vol IV, 1956, Part II, P.7227',
     excerpt:
-      'He frames delay as prudence, but the caution is really about preserving who gets to control the joint family and its assets.',
+      '"I cannot imagine a family which can go on smoothly by the addition of daughters, their heirs, and so on... It is admitted that a daughter goes out of the family by marriage"',
     content:
-      'In legislative language, resistance appeared as a plea for continuity and cultural restraint. But what sat underneath was the fear that statutory reform would reorder authority inside the family, weaken male control over shared property, and make private hierarchy answerable to constitutional principle.',
+      'In order to retain mitakshara coparcenary system unlike how the Hindu code mentioned, it was suggested in as early as 1945, to make women coparceners as well. This statement by Pataskar was made against that.',
   },
   {
-    name: 'Upper-caste male property-holder',
+    name: 'Ram Rajya Parishad',
     style: 'holder',
-    label: 'Estate Ledger',
+    label: 'Right-winged politician',
     excerpt:
-      'His anxiety is not abstract tradition. It is the possibility that inheritance through women could move land, status, and lineage outside controlled caste channels.',
+      '"In the name of reforns direct interference is being shown in religious matters of the Hindus by adopting such measures as the Hindu code bill...the Hindu code bill and such other measures shall be in direct conflict with our Indian culture, as well as with the duties towards husband, on the part of women shall be repealed, if enacted by the present government".',
     content:
-      'For the property-holder, the bill threatened the architecture of family power. If daughters inherited more fully and marriage choices widened, property could leave the tightly guarded circuits through which caste and male authority reproduced themselves across generations.',
+      'This reflects the deep opposition to the attempts to codify Hindu personal laws which was seen as an assault to traditional Indian culture, particularly converning marriage and the status of women, by conservative individuals.',
   },
   {
     name: 'Hindu widow',
@@ -54,19 +54,19 @@ export const actTwoVoices = [
 
 export const actTwoAnxieties = [
   {
-    title: 'Male control over joint family property',
+    title: 'Mitakshara prevailed',
     detail:
-      'The bill threatened the everyday mechanics of coparcenary power by questioning whether patrimony should remain governed through an exclusively male line.',
+      'Under Mitakshara law, women’s survival depended entirely on male discretion. The bill threatened this by making daughters automatic inheritors withn equal shares. They feared losing concrete economic monpoly over women’s independence. ',
   },
   {
-    title: 'Property crossing caste boundaries',
+    title: 'Inheritance denied',
     detail:
-      "Women's inheritance and marriage choices raised the possibility that land, wealth, and status might move beyond the caste lines that had long stabilized elite control.",
+      "Even the then law minister Biswas expressed himself as not in favour of daughters inheritng property from their natal families. Daughters were not considered part of the family after marriage, they cease to be part of the natal family. So inhreitance was denied to keep the property within the family",
   },
   {
-    title: 'Political fear of attacking Hindu tradition',
+    title: 'Hindu tradition',
     detail:
-      'Opponents converted material anxieties into civilizational language, presenting their defence of authority as a defence of religion and social order.',
+      'The Hindu Mahasabha being against legislative interference in religious matters, opposed the Hindu code bill. Swami Karpatiji was the leader of a movement against the new bill. He adamently opposed the bill over the fact that it was being pioleted by Ambedkar. He consistently remarks like, how a former "untouuchable" has no business meddliing in the matters normally preserved by brahmins, shows the threats brahmins faced due to the bill.',
   },
 ];
 
@@ -75,19 +75,19 @@ export const actThreeContradictions = [
     title: 'Section 14',
     subtitle: 'Absolute ownership in theory',
     body:
-      "The 1956 framework recognised women's property as their own in formal terms, announcing a language of equality that looked far more transformative on paper than in lived succession practice.",
+      "Before 1956, women held only limited estate and section 14 converted these limited rights into absolute ownership. But Derrett critiques the provision for childless women- If she inherited property from her father, it goes to father’s heirs, if from her husband then goes to his heirs. Here the law treats the woman as “conduit” for male lineages by basing the succession on property’s source rather than a truly independent owner.",
   },
   {
     title: 'Section 6',
-    subtitle: 'Male survivorship in operation',
+    subtitle: 'Male birthright remains preserved',
     body:
-      "By preserving the Mitakshara coparcenary structure, the Act often ensured that the property at issue never meaningfully reached women in the first place, limiting the force of Section 14's promise.",
+      " Though this provision allowed daughters to receive a share in their father’s coparcenary property, it did not grant them the status of “coparceners” by birth (privilege reserved for sons only). The notion of formal equality was partially achieved as the rule of survivorship continued to favour male lineage unless females of class I heirs or son of predeceased daughter survived. Even after the 2005 amendment where daughters were made coparceners, widows were discriminated as the notional share is reduced further.",
   },
   {
     title: 'Section 30',
-    subtitle: 'Testamentary disinheritance',
+    subtitle: 'Escape route',
     body:
-      'The power to will away property supplied another route through which patriarchal preference could continue, especially against daughters whose claims were already institutionally weak.',
+      'Earlier undivided interests in coparcenary property were inalienable but now were alienable by will. This “testamentary freedom” meant father could disinherit her daughters while favouring his sons. Prima facie what appeared to be a neutral right became a tool for maintaining patriarchal concentrations and transforming daughter’s right to inherit into a “discretionary gift” from male head.',
   },
 ];
 

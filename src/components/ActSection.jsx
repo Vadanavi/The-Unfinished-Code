@@ -19,7 +19,7 @@ function ActSection({ actLabel, title, voice, aside, theme, children }) {
         </div>
         <div className="act-metadata">
           <p className="voice-note">{voice}</p>
-          <p className="section-aside">{aside}</p>
+          {typeof aside === 'string' ? <p className="section-aside">{aside}</p> : aside}
         </div>
       </div>
       <div className="act-content">{children}</div>
