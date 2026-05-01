@@ -42,13 +42,12 @@ export const actTwoVoices = [
       'This reflects the deep opposition to the attempts to codify Hindu personal laws which was seen as an assault to traditional Indian culture, particularly converning marriage and the status of women, by conservative individuals.',
   },
   {
-    name: 'Hindu widow',
+    name: 'M. Ananthasayanam Ayyangar',
     style: 'widow',
-    label: 'Personal Letter',
+    label: 'Lok Sabha speaker',
     excerpt:
-      'Her testimony makes the stakes concrete: dependence, shelter, and dignity all hinge on whether the law treats her claim as real or charitable.',
-    content:
-      'Widowhood exposed the violence hidden in inheritance rules. Her position shows that the so-called defence of tradition depended on keeping women vulnerable to the discretion of male kin, even when reform promised only a minimal condition of security and legal standing.',
+      ' Girl children are part of the family until they marry. Then they become part of their husband’s family and they are cut off from their original family as completely as if they had died. The father, who is the head of the family, may not make a will giving the land away, for the son owns it as much as he. But the daughter owns no portion of it. Now you can see what a horrible thing the Hindu Code Bill is. It says that in addition to the ancient rights of the sons in family property, the father must in addition consider his daughters. Thus the wealth of India will be broken down into smaller and smaller pieces. And soon this great land will be totally ruined.',
+  
   },
 ];
 
