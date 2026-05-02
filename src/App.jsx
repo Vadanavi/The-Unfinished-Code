@@ -169,27 +169,7 @@ function App() {
           </div>
         </ActSection>
 
-        <section className="feature-section standalone-feature standalone-fracture">
-          <div className="section-heading standalone-heading">
-            <span className="eyebrow">Independent Component</span>
-            <h2>Fracture file</h2>
-            <p>
-              This sits after Act III as a separate reading space. It is meant to be encountered after the act,
-              not absorbed as one more panel inside it.
-            </p>
-          </div>
-          <div className="fracture-endcap">
-            <div className="fracture-copy">
-              <span className="eyebrow">Highlighted parts</span>
-              <h3>What the final settlement cut away</h3>
-              <p>
-                After the doctrinal compromise comes the visual record of what was removed, diluted, or
-                postponed before the code emerged as a scattered legislative package.
-              </p>
-            </div>
-            <RedactedDocument highlights={actThreeHighlights} />
-          </div>
-        </section>
+        
 
         <ActSection
           actLabel="Act IV"
@@ -251,16 +231,7 @@ more as accommodation than transformation.
           </div>
         </ActSection>
 
-        <section className="feature-section standalone-feature standalone-gap">
-          <div className="gap-endcap">
-            <div className="section-heading section-heading-inline">
-              <span className="eyebrow">Timeline of unfinished reform</span>
-              <h2>Where the gap closes, and where it does not</h2>
-              <p>The legal story continues unevenly across rights that were resolved, partially repaired, or left structurally open.</p>
-            </div>
-            <GapTimeline items={gapItems} />
-          </div>
-        </section>
+        
 
       </main>
 
