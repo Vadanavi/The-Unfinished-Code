@@ -18,6 +18,12 @@ import {
 } from './data/storyData';
 
 function App() {
+  const vineetaNote = actFourLegacyNotes.find((item) => item.title === 'Vineeta Sharma');
+  const legacyNotes = actFourLegacyNotes.filter((item) => item.title !== 'Vineeta Sharma');
+  const firstContinuity = actFourContinuities[0];
+  const lastContinuity = actFourContinuities[actFourContinuities.length - 1];
+  const middleContinuities = actFourContinuities.slice(1, -1);
+
   return (
     
     <div className="app-shell">
@@ -100,9 +106,12 @@ function App() {
         <ActSection
           actLabel="Act II"
           title="The Resistance"
-          voice="This section reads opposition as a defence of power: over property, caste continuity, and the political authority to define tradition."
-          theme="resistance"
-          aside="The question is not who merely disliked reform, but what exactly they feared the bill would unsettle."
+                    aside={
+                      <TypewriterText
+                     text= "Once property is understood as a source of social power, the intensity of the resistance to the Hindu Code Bill becomes easier to explain, for the proposed reform threatened not tradition in the abstract, but entrenched systems of male authority and control."
+                    classname="section-aside"
+                    />
+                    }
         >
           <div className="section-stack">
             <div className="resistance-stage">
@@ -195,19 +204,31 @@ function App() {
         >
           <div className="section-stack">
             <div className="legacy-layout">
-              <article className="analysis-panel legacy-panel">
-                <span className="document-kicker">Analytical Question</span>
-                <h3>Do subsequent amendments and judicial interpretation represent genuine progress?</h3>
-                <p>
-                  The post-1956 history is best read as uneven repair. Andhra Pradesh in 1986, the central
-                  amendment in 2005, and <em>Vineeta Sharma</em> in 2020 all matter. But they matter inside a
-                  field still shaped by coercion, informal exclusion, and the unequal social conditions under
-                  which property claims are made.
-                </p>
-              </article>
+              <div className="legacy-left">
+                <article className="analysis-panel legacy-panel">
+                  <span className="document-kicker"></span>
+                                  <p>
+                    The trajectory of reform under the HSA is not a decisive break from patriarchy, but a century
+long legacy of compromise. While each amendment has been framed or devised to be
+progressive, the underlying structure of inheritance (Mitakshara coparcenary) still stands
+preserved.
+These reforms show a pattern where there is an incremental inclusion of women without
+dismantling the system that excluded them in the first place. Hence, this reform has operated
+more as accommodation than transformation.
+                  </p>
+                </article>
+
+                {vineetaNote ? (
+                  <article className="legacy-note legacy-note-featured">
+                    <span>{vineetaNote.year}</span>
+                    <h3>{vineetaNote.title}</h3>
+                    <p>{vineetaNote.detail}</p>
+                  </article>
+                ) : null}
+              </div>
 
               <div className="legacy-notes">
-                {actFourLegacyNotes.map((item) => (
+                {legacyNotes.map((item) => (
                   <article key={`${item.year}-${item.title}`} className="legacy-note">
                     <span>{item.year}</span>
                     <h3>{item.title}</h3>
@@ -219,27 +240,22 @@ function App() {
 
             <div className="legacy-bottom">
               <div className="continuity-panel">
-                <span className="document-kicker">Continuing barriers</span>
-                <h3>Why substantive equality still remains unfinished</h3>
-                <ul className="continuity-list">
-                  {actFourContinuities.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <span className="document-kicker">Why substantive equality remains unfinished: Formal transformation v. substantive reality</span>
+                                <div className="continuity-list">
+                  <p>{firstContinuity}</p>
+                  <ul>
+                    {middleContinuities.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  <p>{lastContinuity}</p>
+                </div>
               </div>
             </div>
           </div>
         </ActSection>
 
         <section className="feature-section standalone-feature standalone-gap">
-          <div className="section-heading standalone-heading">
-            <span className="eyebrow"></span>
-            <h2>Legacy timeline</h2>
-            <p>
-              This is the year-bar timeline from Act IV, now pulled into its own space so it reads as a separate
-              component after the act rather than part of the act body.
-            </p>
-          </div>
           <div className="gap-endcap">
             <div className="section-heading section-heading-inline">
               <span className="eyebrow">Timeline of unfinished reform</span>

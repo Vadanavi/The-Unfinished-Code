@@ -1141,8 +1141,13 @@ textarea {
     radial-gradient(circle at top right, rgba(159, 69, 61, 0.1), transparent 30%),
     linear-gradient(180deg, rgba(241, 226, 200, 0.96), rgba(209, 183, 148, 0.94));
 }
+.legacy-left {
+  display: grid;
+  gap: 1.4rem;
+}
 .legacy-notes {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 .legacy-note:nth-child(1) {
   background:
@@ -1170,9 +1175,17 @@ textarea {
 }
 .continuity-list {
   margin: 1rem 0 0;
-  padding-left: 1.2rem;
+  padding-left: 0;
   display: grid;
   gap: 0.7rem;
+}
+.continuity-list p {
+  margin: 0;
+}
+.continuity-list > ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-position: inside;
 }
 .timeline-endcap {
   display: grid;
@@ -1220,6 +1233,10 @@ textarea {
 .standalone-heading {
   padding-top: 1.2rem;
   border-top: 2px solid var(--line-soft);
+}
+.standalone-gap::before,
+.standalone-gap .standalone-heading {
+  border: none;
 }
 .standalone-feature .fracture-endcap,
 .standalone-feature .gap-endcap,

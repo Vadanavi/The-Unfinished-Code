@@ -93,29 +93,30 @@ export const actThreeContradictions = [
 export const actFourLegacyNotes = [
   {
     year: '1986',
-    title: 'State-level opening',
+    title: 'State led reform',
     detail:
-      'Andhra Pradesh begins the state amendment trajectory, showing that the centre did not settle the problem and that inherited compromise kept returning for repair.',
+      'Kerala: Abolition of the Hindu joint family altogether, ceased survivorship and declared the property to be held as tenants in common. Andhra pradesh: (followed by TN, Karnataka, and Maha) made the daughters coparceners, but exclude married daughters from claiming inheritance. This made a womans property contingent on her marital status than her birthright, adhering to the patriarchal notions of marriage and succession.',
   },
   {
     year: '2005',
     title: 'Central amendment',
     detail:
-      "Daughters' coparcenary rights are formally expanded, but statutory recognition does not dissolve the social and procedural barriers that still govern access.",
+      "Reality: 81%-gender equality in the inheritance of agricultural land, 73%-abolish the mitakshara coparcenary system, 63%-support restriction on testamentary freedom. Law: The national amendment susbstituted section 6 and declared the daughters as coparceners on a central level beyond state amendments and removed the restricition on married daughters. However several problems like not touching agricultural land, denyed coparcenary status, and no restriction on testamentary freedom remaind.This depicts how through politics of minimal disruption, it extends mere formal equality without enquiring whether it substantially reaches that outcome or not ",
   },
   {
     year: '2020',
     title: 'Vineeta Sharma',
     detail:
-      'The Supreme Court clarifies that daughters hold coparcenary rights by birth, yet doctrinal progress still meets family pressure, litigation costs, and exclusion from management on the ground.',
+      'Given the contrasting interpretations in Prakash v Phulavati, Danamma v Amar and other cases, the cour sought to clarify the legal position behind few legislative silences in the HSA. By removing restrictions on inheritance due to a dead father on the day of inheritance, retaining the legal fiction of notional partition, and justifying ratifying the daughters as coparcenary, the framework seeks to clarify and settle the position of the central amendment. However, this clarification further formalizes the coparcenary structure without inspecting structural issues. It secures a womans place within the coparcenary, but fails to introspect whether the transction leads to any meaningful benefit.',
   },
 ];
 
 export const actFourContinuities = [
-  'Relinquishment deeds signed under family pressure still convert formal entitlement into coerced surrender.',
-  'Women remain de facto excluded from the management practices through which joint family property is actually controlled.',
-  'Caste location, land concentration, and unequal access to legal process continue to shape who can turn paper rights into usable claims.',
-  'The distance between formal equality and substantive equality remains the central measure of the reform’s unfinished legacy.',
+  'The problem with these amendments is systemic. The failure of amendments to achieve gender equality is because of the inherent nature of the coparcenary system which was built for agnates over cognates. This makes it difficult to accomodate women into a system of inheritance that was devised for men by men. This persists in the following ways as of today:.',
+  'The persistence of the coparcenary sustem which reduces the already contingent shares to Class I heirs.',
+  'Women remain de facto excluded from management practices of the family.',
+  'Relinquishment deeds and presence of testamentary disposition remain a prevalent issue',
+  'Each amendment has moved the law forward while leaving the compromise and underlying bargain in its original place. The reforms throughout the years tries to accomodate equality within patriarchal property structure. However, most of these amendments do not introspect the structures of social architecture which are inherently built inequal. While this renders any accomodation progressive on paper, they are inequal in reality. ',
 ];
 
 export const actThreeHighlights = [
