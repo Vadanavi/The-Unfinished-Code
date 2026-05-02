@@ -3,285 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kanoon — The Hindu Succession Act</title>
+<title>तडजोड · A Game of Compromise</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@500;700;800&family=Special+Elite&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 :root {
-  --bg:#34231d; --bg2:#453128; --bg3:#291c16; --panel:#2f211b; --panel-2:#3b2a22;
-  --border:#6f5442; --border2:#94725b; --line:rgba(244,230,207,0.18);
-  --gold:#b17f5a; --gold2:#e0b387; --gold-dim:#c59569;
-  --parch:#f4e6cf; --parch2:#ead7b7; --parch3:#d8c0a0;
-  --red:#9f453d; --red2:#cf9277;
-  --green:#6d6c3f; --green2:#96a35a;
-  --blue:#5a392a; --blue2:#b17f5a;
-  --ink:#f4e6cf; --ink2:#dfc2a3; --ink3:#b59673; --ink4:#6f5442;
-  --stat-w:#c59569; --stat-j:#96a35a; --stat-p:#b17f5a; --stat-c:#9f453d;
+  --bg:#c9a87a; --bg2:#d4b896; --bg3:#b89868; --panel:#ead7b7; --panel-2:#f4e6cf;
+  --border:#8c6e54; --border2:#a08366; --line:rgba(58,36,21,0.22);
+  --gold:#8c5e3a; --gold2:#a87245; --gold-dim:#8c6e44;
+  --parch:#3a2415; --parch2:#4a2f1d; --parch3:#5e3d27;
+  --red:#8a3a32; --red2:#a85b48;
+  --green:#5a6a32; --green2:#7a8246;
+  --blue:#5a392a; --blue2:#8c5e3a;
+  --ink:#2e1a10; --ink2:#4a2f1d; --ink3:#5e3d27; --ink4:#8c6e54;
+  --stat-w:#8c5e3a; --stat-j:#5a6a32; --stat-p:#8c4a2e; --stat-c:#8a3a32;
   --serif:'Cormorant Garamond', Georgia, serif;
   --display:'Manrope', sans-serif;
   --mono:'Special Elite', 'Courier New', monospace;
 }
-html,body{height:100%;background:
-  radial-gradient(circle at 18% 20%, rgba(159,69,61,0.28), transparent 26%),
-  radial-gradient(circle at 82% 14%, rgba(109,108,63,0.24), transparent 28%),
-  radial-gradient(circle at 28% 62%, rgba(225,187,140,0.14), transparent 26%),
-  radial-gradient(circle at 50% 82%, rgba(20,10,7,0.28), transparent 36%),
-  linear-gradient(180deg, #9a7b5d 0%, #7a6048 20%, #5a4337 54%, #34231d 100%);
+html,body{height:100%;background:#c9a87a;
 color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.6;overflow-x:hidden;}
-body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:0.12;background:
-  repeating-linear-gradient(115deg, rgba(255,243,222,0.08) 0 2px, transparent 2px 26px),
-  repeating-linear-gradient(24deg, rgba(42,24,18,0.12) 0 1px, transparent 1px 30px),
-  radial-gradient(circle at 25% 24%, rgba(255,245,226,0.14), transparent 30%),
-  radial-gradient(circle at 74% 72%, rgba(24,13,9,0.18), transparent 28%);
-background-size:auto, auto, 100% 100%, 100% 100%;
-mix-blend-mode:soft-light;}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;opacity:0.2;background:
-  repeating-linear-gradient(142deg, rgba(255,244,221,0.04) 0 18px, rgba(67,43,32,0.08) 18px 21px, transparent 21px 48px),
-  repeating-linear-gradient(38deg, rgba(18,8,6,0.05) 0 14px, transparent 14px 34px);
+body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:0.08;background:
+  repeating-linear-gradient(115deg, rgba(58,36,21,0.06) 0 2px, transparent 2px 26px),
+  repeating-linear-gradient(24deg, rgba(58,36,21,0.05) 0 1px, transparent 1px 30px);
 mix-blend-mode:multiply;}
+body::after{display:none;}
 
 /* SCREENS */
 .screen{display:none;min-height:100vh;}
 .screen.active{display:block;}
 
 /* OPENING */
-#s-open{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:
-  linear-gradient(180deg, rgba(17,10,8,0.14), rgba(17,10,8,0.28)),
-  radial-gradient(circle at top left, rgba(159,69,61,0.3), transparent 34%),
-  radial-gradient(circle at top right, rgba(109,108,63,0.22), transparent 30%),
-  radial-gradient(circle at 52% 22%, rgba(218,177,124,0.09), transparent 24%),
-  linear-gradient(180deg, rgba(239,221,191,0.08), rgba(54,35,27,0.12));
-position:relative;overflow:hidden;}
+#s-open{min-height:100vh;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:#c9a87a;position:relative;overflow:hidden;}
 #s-open.active{display:flex;}
-#s-open::before{content:'';position:absolute;inset:2rem;border:1px solid var(--line);box-shadow:inset 0 0 0 1px rgba(255,244,221,0.04);pointer-events:none;}
-#s-open::after{content:'';position:absolute;inset:12% 18% auto;height:14rem;background:
-  radial-gradient(circle at 28% 40%, rgba(159,69,61,0.22), transparent 34%),
-  radial-gradient(circle at 72% 44%, rgba(109,108,63,0.18), transparent 34%),
-  radial-gradient(circle at 50% 58%, rgba(226,184,129,0.15), transparent 40%);
-filter:blur(18px);opacity:0.85;pointer-events:none;}
+#s-open::before{content:'';position:absolute;inset:2rem;border:1px solid rgba(58,36,21,0.32);box-shadow:inset 0 0 0 1px rgba(58,36,21,0.08);pointer-events:none;}
+#s-open::after{display:none;}
 .open-eyebrow,.create-step-label,.section-label,.sheet-title,.gs-label,.scene-era-tag,.choice-prompt,.doc-insert-label,.journal-era{
-  font-family:var(--display);font-size:0.65rem;letter-spacing:0.22em;color:#efc8a5;margin-bottom:0.5rem;text-transform:uppercase;font-weight:700;
+  font-family:var(--display);font-size:0.7rem;letter-spacing:0.22em;color:var(--parch2);margin-bottom:0.5rem;text-transform:uppercase;font-weight:700;
 }
+.create-left .create-step-label,.create-left .section-label{color:#d8c0a0;}
 .open-eyebrow{margin-bottom:2.2rem;}
-.open-title{font-family:var(--display);font-size:clamp(3.4rem,9vw,7.4rem);font-weight:800;line-height:0.92;letter-spacing:-0.05em;margin-bottom:0.65rem;color:var(--parch);text-shadow:0 8px 28px rgba(12,5,3,0.2);}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .open-title{background-image:linear-gradient(90deg, #eed3b2 0%, #d6947d 46%, #d6c984 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
-}
-.open-subtitle{font-family:var(--mono);font-size:clamp(0.8rem,2vw,1.1rem);font-weight:400;color:#e6c69a;letter-spacing:0.14em;text-transform:none;margin-bottom:2.8rem;text-shadow:0 6px 18px rgba(14,7,4,0.22);}
-.open-rule{width:240px;height:1px;background:linear-gradient(90deg,transparent,rgba(224,179,135,0.85),transparent);margin:0 auto 2.4rem;}
-.open-lede{font-family:var(--serif);font-size:1.14rem;font-style:italic;color:rgba(244,230,207,0.88);max-width:560px;line-height:1.75;margin-bottom:3rem;}
+.open-title{font-family:var(--display);font-size:clamp(3.4rem,9vw,7.4rem);font-weight:800;line-height:0.92;letter-spacing:-0.04em;margin-bottom:0.4rem;color:var(--parch);text-shadow:0 4px 14px rgba(58,36,21,0.18);}
+.open-translation{font-family:var(--serif);font-size:clamp(0.95rem,2vw,1.2rem);font-style:italic;color:var(--parch2);letter-spacing:0.04em;margin-bottom:2.4rem;}
+.open-rule{width:240px;height:1px;background:linear-gradient(90deg,transparent,rgba(58,36,21,0.6),transparent);margin:0 auto 2.4rem;}
+.open-lede{font-family:var(--serif);font-size:1.14rem;font-style:italic;color:var(--parch2);max-width:560px;line-height:1.75;margin-bottom:2.4rem;}
+.open-disclaimer{margin-top:2rem;max-width:560px;padding:1rem 1.4rem;border:1px solid rgba(58,36,21,0.45);background:rgba(46,26,16,0.08);font-family:var(--serif);font-size:0.92rem;line-height:1.6;color:var(--parch2);font-style:italic;}
 .btn-primary,.btn-begin,.btn-next-era{
-  font-family:var(--display);font-size:0.76rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--parch);
-  background:linear-gradient(180deg, rgba(36,24,18,0.72), rgba(74,52,39,0.56));
-  border:1px solid rgba(244,230,207,0.22);cursor:pointer;transition:all 0.2s;
-  box-shadow:0 14px 32px rgba(10,4,2,0.22);
+  font-family:var(--display);font-size:0.76rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--panel-2);
+  background:linear-gradient(180deg, #4a2f1d, #6b4a31);
+  border:1px solid rgba(58,36,21,0.6);cursor:pointer;transition:all 0.2s;
+  box-shadow:0 8px 22px rgba(58,36,21,0.22);
 }
 .btn-primary{padding:1rem 3rem;}
 .btn-primary:hover,.btn-begin.ready:hover,.btn-next-era:hover{
-  background:linear-gradient(180deg, rgba(72,46,35,0.84), rgba(118,80,56,0.7));
+  background:linear-gradient(180deg, #5e3d27, #8c6e54);
   transform:translateY(-2px);
 }
 
 /* Character Dossier */
-#s-create{min-height:100vh;display:none;background:var(--bg2);}
+#s-create{min-height:100vh;display:none;background:#3a2415;}
 #s-create.active{display:block;}
 .create-layout{display:grid;grid-template-columns:1fr 320px;min-height:100vh;}
-.create-left{padding:3rem;border-right:1px solid var(--border);overflow-y:auto;background:
-  radial-gradient(circle at 14% 18%, rgba(159,69,61,0.12), transparent 28%),
-  linear-gradient(180deg, rgba(255,255,255,0.01), transparent);}
-.create-right{padding:2rem;background:
-  radial-gradient(circle at 82% 16%, rgba(109,108,63,0.12), transparent 26%),
-  linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
-  var(--bg3);display:flex;flex-direction:column;}
-.create-heading{font-family:var(--display);font-size:1.9rem;font-weight:800;color:var(--parch);margin-bottom:0.4rem;letter-spacing:-0.03em;}
-.create-heading,.scene-title,.end-title{
-  text-shadow:0 8px 24px rgba(12,5,3,0.14);
-}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .create-heading,.scene-title,.end-title{
-    background-image:linear-gradient(90deg, #f4e6cf 0%, #e0b387 44%, #cf9277 100%);
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
-  }
-}
-.create-sub{font-size:0.9rem;color:var(--ink3);font-style:italic;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.create-left{padding:3rem;border-right:1px solid #5e3d27;overflow-y:auto;background:#3a2415;}
+.create-right{padding:2rem;background:#bd9a6b;display:flex;flex-direction:column;}
+.create-heading{font-family:var(--display);font-size:2rem;font-weight:800;color:#f4e6cf;margin-bottom:0.4rem;letter-spacing:-0.02em;}
+.create-sub{font-size:1rem;color:#d8c0a0;font-style:italic;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid #5e3d27;line-height:1.7;}
 .choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:2.5rem;}
 .choice-grid.cols-3{grid-template-columns:1fr 1fr 1fr;}
-.c-option{border:1px solid var(--border);padding:1.2rem;cursor:pointer;transition:all 0.2s;background:
-  linear-gradient(135deg, rgba(159,69,61,0.12), transparent 48%),
-  linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
-  var(--panel);position:relative;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,0.22);}
+.c-option{border:1px solid var(--border);padding:1.2rem;cursor:pointer;transition:all 0.2s;background:var(--panel-2);position:relative;overflow:hidden;box-shadow:0 6px 14px rgba(58,36,21,0.16);}
 .c-option::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:transparent;transition:background 0.2s;}
-.c-option::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,0.02);pointer-events:none;}
-.c-option:hover{border-color:var(--border2);transform:translateY(-2px);}
-.c-option:hover::before{background:var(--gold-dim);}
-.c-option.selected{border-color:var(--gold);background:
-  linear-gradient(135deg, rgba(109,108,63,0.18), transparent 48%),
-  linear-gradient(180deg, rgba(177,127,90,0.12), transparent),
-  #241812;}
-.c-option.selected::before{background:linear-gradient(180deg, var(--red), var(--green));}
-.c-opt-icon,.portrait-glyph,.hud-avatar,.gs-portrait,.speaker-icon{display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);letter-spacing:0.14em;text-transform:uppercase;border:1px solid rgba(224,179,135,0.34);background:linear-gradient(180deg, rgba(177,127,90,0.16), rgba(255,255,255,0.01));color:var(--parch);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.03);}
+.c-option::after{content:'';position:absolute;inset:0;border:1px solid rgba(58,36,21,0.06);pointer-events:none;}
+.c-option:hover{border-color:var(--parch);transform:translateY(-2px);background:#fbf0db;}
+.c-option:hover::before{background:var(--gold);}
+.c-option.selected{border-color:var(--parch);background:#fdf3df;box-shadow:0 10px 26px rgba(58,36,21,0.40);transform:translateY(-2px);}
+.c-option.selected::before{background:linear-gradient(180deg, var(--red), var(--green));width:4px;}
+.choice-grid:has(.c-option.selected) .c-option:not(.selected){opacity:0.42;filter:saturate(0.6);transform:none;}
+.choice-grid:has(.c-option.selected) .c-option:not(.selected):hover{opacity:0.7;filter:saturate(0.8);}
+.c-opt-icon,.portrait-glyph,.hud-avatar,.gs-portrait,.speaker-icon{display:inline-flex;align-items:center;justify-content:center;font-family:var(--display);letter-spacing:0.14em;text-transform:uppercase;border:1px solid var(--border);background:#d4b896;color:var(--parch);}
 .c-opt-icon{width:3rem;height:3rem;margin-bottom:0.8rem;font-size:0.86rem;}
-.c-opt-name{font-family:var(--display);font-size:0.85rem;font-weight:700;color:var(--parch2);margin-bottom:0.3rem;}
-.c-opt-desc{font-size:0.78rem;color:var(--ink3);line-height:1.4;}
+.c-opt-name{font-family:var(--display);font-size:0.92rem;font-weight:700;color:var(--parch);margin-bottom:0.3rem;}
+.c-opt-desc{font-size:0.86rem;color:var(--ink2);line-height:1.55;}
+.c-opt-note{margin-top:0.7rem;padding:0.6rem 0.7rem;background:rgba(138,58,50,0.10);border-left:2px solid var(--red);font-family:var(--serif);font-size:0.78rem;line-height:1.5;color:var(--ink2);font-style:italic;}
 .c-opt-stats{display:flex;gap:6px;margin-top:0.6rem;flex-wrap:wrap;}
-.stat-tag{font-family:var(--mono);font-size:0.6rem;padding:2px 6px;border-radius:2px;}
-.tag-w{background:rgba(177,127,90,0.15);color:var(--stat-w);border:1px solid rgba(177,127,90,0.3);}
-.tag-j{background:rgba(109,108,63,0.15);color:var(--stat-j);border:1px solid rgba(109,108,63,0.3);}
-.tag-p{background:rgba(90,57,42,0.15);color:var(--stat-p);border:1px solid rgba(90,57,42,0.3);}
-.tag-c{background:rgba(159,69,61,0.15);color:var(--stat-c);border:1px solid rgba(159,69,61,0.3);}
-.section-label{margin-bottom:0.8rem;margin-top:0.5rem;}
-.sheet-title{font-size:0.72rem;margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);}
-.char-portrait{width:100%;aspect-ratio:1;background:
-  radial-gradient(circle at top, rgba(159,69,61,0.16), transparent 34%),
-  radial-gradient(circle at 82% 18%, rgba(109,108,63,0.12), transparent 28%),
-  linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
-  var(--panel);
-border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:4rem;margin-bottom:1rem;position:relative;overflow:hidden;}
-.char-portrait::before,.gs-portrait::before{content:'';position:absolute;inset:10%;border:1px solid rgba(224,179,135,0.14);pointer-events:none;}
-.char-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,var(--bg3) 100%);pointer-events:none;}
-.char-name-display{font-family:var(--display);font-size:1rem;color:var(--parch);margin-bottom:0.2rem;min-height:1.4rem;letter-spacing:-0.02em;}
-.char-desc-display{font-size:0.78rem;color:var(--ink3);font-style:italic;margin-bottom:1.5rem;min-height:2rem;}
+.stat-tag{font-family:var(--mono);font-size:0.66rem;padding:2px 7px;border-radius:2px;font-weight:700;}
+.stat-tag.tag-pos{background:rgba(90,106,50,0.18);color:#3f5421;border:1px solid #5a6a32;}
+.stat-tag.tag-neg{background:rgba(138,58,50,0.18);color:#7a2a25;border:1px solid #8a3a32;}
+.tag-w{background:rgba(140,94,58,0.18);color:var(--stat-w);border:1px solid rgba(140,94,58,0.45);}
+.tag-j{background:rgba(90,106,50,0.18);color:var(--stat-j);border:1px solid rgba(90,106,50,0.45);}
+.tag-p{background:rgba(140,74,46,0.18);color:var(--stat-p);border:1px solid rgba(140,74,46,0.45);}
+.tag-c{background:rgba(138,58,50,0.18);color:var(--stat-c);border:1px solid rgba(138,58,50,0.45);}
+.section-label{margin-bottom:0.8rem;margin-top:0.5rem;color:var(--parch2);}
+.sheet-title{font-size:0.78rem;margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);color:var(--parch);}
+.char-portrait{width:100%;aspect-ratio:1;background:var(--panel-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:4rem;margin-bottom:1rem;position:relative;overflow:hidden;color:var(--parch);}
+.char-portrait::before,.gs-portrait::before{content:'';position:absolute;inset:10%;border:1px solid rgba(58,36,21,0.18);pointer-events:none;}
+.char-portrait::after{display:none;}
+.char-name-display{font-family:var(--display);font-size:1rem;color:var(--parch);margin-bottom:0.2rem;min-height:1.4rem;letter-spacing:-0.02em;font-weight:700;}
+.char-desc-display{font-size:0.85rem;color:var(--parch2);font-style:italic;margin-bottom:1.5rem;min-height:2rem;}
 .stats-block{margin-bottom:1.5rem;}
 .stat-row{margin-bottom:10px;}
 .stat-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
-.stat-name{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--ink3);}
-.stat-val{font-family:var(--mono);font-size:0.72rem;font-weight:700;}
+.stat-name{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;color:var(--parch2);font-weight:700;}
+.stat-val{font-family:var(--mono);font-size:0.78rem;font-weight:700;}
 .sv-w{color:var(--stat-w);} .sv-j{color:var(--stat-j);} .sv-p{color:var(--stat-p);} .sv-c{color:var(--stat-c);}
-.stat-track{height:5px;background:var(--border);}
-.stat-fill{height:100%;transition:width 0.4s cubic-bezier(0.4,0,0.2,1);}
+.stat-track{height:6px;background:rgba(58,36,21,0.18);border-radius:2px;}
+.stat-fill{height:100%;transition:width 0.4s cubic-bezier(0.4,0,0.2,1);border-radius:2px;}
 .sf-w{background:var(--stat-w);} .sf-j{background:var(--stat-j);} .sf-p{background:var(--stat-p);} .sf-c{background:var(--stat-c);}
-.stat-hint{font-size:0.68rem;color:var(--ink3);font-style:italic;margin-top:0.5rem;line-height:1.5;}
+.stat-hint{font-size:0.86rem;color:var(--parch);font-style:normal;margin-top:0.9rem;line-height:1.7;background:var(--panel-2);border:1px solid var(--border);padding:0.85rem 0.9rem;letter-spacing:0.01em;font-weight:500;}
+.stat-hint strong{color:var(--parch);font-family:var(--display);font-weight:700;letter-spacing:0.04em;}
 .trait-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.5rem;}
-.trait-chip{font-family:var(--mono);font-size:0.6rem;padding:3px 8px;border:1px solid var(--border);color:var(--ink3);background:var(--panel);}
+.trait-chip{font-family:var(--mono);font-size:0.62rem;padding:3px 8px;border:1px solid var(--border);color:var(--parch);background:var(--panel-2);}
 .btn-begin{padding:0.9rem;width:100%;margin-top:auto;opacity:0.3;pointer-events:none;}
 .btn-begin.ready{opacity:1;pointer-events:all;}
 
 /* GAME */
-#s-game{display:none;background:var(--bg);}
+#s-game{display:none;background:#3a2415;}
 #s-game.active{display:block;}
-.hud{background:
-  linear-gradient(180deg, rgba(22,13,10,0.62), rgba(64,45,34,0.38)),
-  radial-gradient(circle at 18% 20%, rgba(159,69,61,0.12), transparent 24%),
-  var(--bg2);border-bottom:1px solid var(--line);padding:0.8rem 2rem;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;backdrop-filter:blur(12px);}
+.hud{background:#2e1a10;border-bottom:1px solid #5e3d27;padding:0.9rem 2rem;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;}
 .hud-char{display:flex;align-items:center;gap:0.8rem;}
 .hud-avatar{width:2.75rem;height:2.75rem;font-size:0.72rem;flex-shrink:0;}
-.hud-name{font-family:var(--display);font-size:0.82rem;color:var(--parch);font-weight:700;}
-.hud-role{font-size:0.62rem;color:var(--ink3);font-style:italic;}
+.hud-name{font-family:var(--display);font-size:0.9rem;color:#f4e6cf;font-weight:700;}
+.hud-role{font-size:0.74rem;color:#d8c0a0;font-style:italic;}
 .hud-stats{display:flex;gap:1.5rem;justify-content:center;}
 .hud-stat{display:flex;align-items:center;gap:8px;}
-.hud-stat-label{font-family:var(--display);font-size:0.55rem;letter-spacing:0.12em;color:var(--ink2);}
-.hud-bar{width:80px;height:4px;background:var(--border);}
-.hud-bar-fill{height:100%;transition:width 0.5s ease;}
+.hud-stat-label{font-family:var(--display);font-size:0.62rem;letter-spacing:0.12em;color:#ead7b7;font-weight:700;}
+.hud-bar{width:80px;height:5px;background:rgba(244,230,207,0.18);border-radius:2px;}
+.hud-bar-fill{height:100%;transition:width 0.5s ease;border-radius:2px;}
 .era-nav{display:flex;gap:4px;}
-.era-btn{font-family:var(--display);font-size:0.55rem;letter-spacing:0.1em;padding:4px 10px;border:1px solid var(--border);background:rgba(36,24,18,0.24);color:var(--ink3);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
-.era-btn:hover{border-color:var(--border2);color:var(--ink2);background:rgba(90,57,42,0.16);}
-.era-btn.active{border-color:var(--gold);color:var(--parch);background:linear-gradient(180deg, rgba(159,69,61,0.16), rgba(109,108,63,0.12));}
-.era-btn.done{color:var(--ink4);background:rgba(255,255,255,0.02);}
-.game-layout{display:grid;grid-template-columns:1fr 280px;min-height:calc(100vh - 57px);}
-.stage{overflow-y:auto;}
-.scene-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid var(--border);background:
-  linear-gradient(180deg, rgba(17,10,8,0.18), rgba(17,10,8,0.02)),
-  radial-gradient(circle at 18% 18%, rgba(159,69,61,0.14), transparent 26%),
-  radial-gradient(circle at 84% 16%, rgba(109,108,63,0.12), transparent 22%),
-  linear-gradient(180deg,var(--bg3) 0%,transparent 100%);}
-.scene-title{font-family:var(--display);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--parch);line-height:1.15;margin-bottom:0.3rem;letter-spacing:-0.03em;}
-.scene-subtitle{font-size:0.9rem;color:var(--ink3);font-style:italic;}
+.era-btn{font-family:var(--display);font-size:0.62rem;letter-spacing:0.1em;padding:5px 11px;border:1px solid #5e3d27;background:#2e1a10;color:#d8c0a0;cursor:pointer;transition:all 0.2s;white-space:nowrap;font-weight:700;}
+.era-btn:hover{border-color:#ead7b7;background:#4a2f1d;color:#f4e6cf;}
+.era-btn.active{border-color:#f4e6cf;color:#3a2415;background:#ead7b7;}
+.era-btn.done{color:#a08366;background:#2e1a10;}
+.game-layout{display:grid;grid-template-columns:1fr 300px;min-height:calc(100vh - 60px);}
+.stage{overflow-y:auto;background:#3a2415;}
+.scene-header{padding:2.5rem 3rem 2rem;border-bottom:1px solid #5e3d27;background:#2e1a10;}
+.scene-era-tag{color:#d8c0a0;}
+.scene-title{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800;color:#f4e6cf;line-height:1.15;margin-bottom:0.3rem;letter-spacing:-0.02em;}
+.scene-subtitle{font-size:1rem;color:#d8c0a0;font-style:italic;}
 .dialogue-area{padding:2rem 3rem;}
 .speaker-bar{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.65rem;}
-.speaker-icon{width:2.1rem;height:2.1rem;font-size:0.6rem;flex-shrink:0;}
-.speaker-name{font-family:var(--display);font-size:0.8rem;color:var(--parch2);letter-spacing:0.02em;font-weight:700;}
-.speaker-tag{font-family:var(--mono);font-size:0.58rem;color:var(--ink3);}
-.speech-bubble{background:
-  linear-gradient(135deg, rgba(177,127,90,0.12), transparent 48%),
-  linear-gradient(180deg, rgba(255,255,255,0.015), transparent),
-  var(--panel);border:1px solid var(--border);border-left:3px solid var(--gold-dim);padding:1.2rem 1.5rem;margin-bottom:1.5rem;font-size:0.96rem;line-height:1.8;color:var(--ink);box-shadow:0 14px 32px rgba(0,0,0,0.2);}
-.speech-bubble.player-speech{border-left-color:var(--stat-p);background:linear-gradient(180deg, rgba(177,127,90,0.14), transparent), #2a1c15;}
-.speech-bubble.enemy-speech{border-left-color:var(--red);background:linear-gradient(180deg, rgba(159,69,61,0.12), transparent), #2a1613;}
-.speech-bubble.narrator{border-left-color:var(--border);background:transparent;border-color:transparent;padding:0.3rem 0;font-style:italic;color:var(--ink2);}
-.doc-insert{background:
-  linear-gradient(135deg, rgba(109,108,63,0.12), transparent 48%),
-  linear-gradient(180deg, rgba(177,127,90,0.08), transparent),
-  var(--bg3);border:1px solid var(--border);border-top:3px solid var(--gold-dim);padding:1.2rem 1.5rem;margin-bottom:1.5rem;font-family:var(--mono);font-size:0.78rem;color:var(--parch2);line-height:1.7;box-shadow:0 14px 32px rgba(0,0,0,0.22);}
-.doc-insert em{color:var(--ink2);font-style:normal;}
-.doc-insert strong{color:var(--parch);}
+.speaker-icon{width:2.1rem;height:2.1rem;font-size:0.62rem;flex-shrink:0;background:#5e3d27;color:#f4e6cf;border:1px solid #8c6e54;}
+.speaker-name{font-family:var(--display);font-size:0.9rem;color:#f4e6cf;letter-spacing:0.02em;font-weight:700;}
+.speaker-tag{font-family:var(--mono);font-size:0.66rem;color:#d8c0a0;}
+.speech-bubble{background:var(--panel-2);border:1px solid var(--border);border-left:3px solid var(--gold);padding:1.3rem 1.6rem;margin-bottom:1.5rem;font-size:1.02rem;line-height:1.8;color:var(--ink);box-shadow:0 6px 16px rgba(0,0,0,0.32);}
+.speech-bubble.player-speech{border-left-color:var(--stat-p);background:#fbf0db;}
+.speech-bubble.enemy-speech{border-left-color:var(--red);background:#f6e3c8;}
+.speech-bubble.narrator{border:1px solid #5e3d27;border-left:3px solid #c9a87a;background:#2e1a10;padding:1.4rem 1.6rem;font-family:var(--serif);font-style:italic;font-size:1.18rem;line-height:1.8;color:#f4e6cf;box-shadow:0 6px 16px rgba(0,0,0,0.28);}
+.doc-insert{background:var(--panel);border:1px solid var(--border);border-top:3px solid var(--gold);padding:1.2rem 1.5rem;margin-bottom:1.5rem;font-family:var(--mono);font-size:0.86rem;color:var(--parch);line-height:1.75;box-shadow:0 6px 16px rgba(0,0,0,0.32);}
+.doc-insert-label{color:var(--parch2);}
+.doc-insert em{color:var(--parch2);font-style:italic;}
+.doc-insert strong{color:var(--parch);font-weight:700;}
 .choice-area{padding:0 3rem 2rem;}
-.choices-list{display:flex;flex-direction:column;gap:8px;}
-.g-choice{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:1rem;border:1px solid var(--border);padding:1rem 1.2rem;cursor:pointer;transition:all 0.18s;background:
-  linear-gradient(135deg, rgba(159,69,61,0.12), transparent 52%),
-  linear-gradient(180deg, rgba(255,255,255,0.015), transparent),
-  var(--panel);text-align:left;width:100%;box-shadow:0 10px 26px rgba(0,0,0,0.18);}
-.g-choice:hover{border-color:var(--gold-dim);background:
-  linear-gradient(135deg, rgba(109,108,63,0.14), transparent 52%),
-  linear-gradient(180deg, rgba(177,127,90,0.08), transparent),
-  #2b1d17;}
-.g-choice.selected{border-color:var(--gold);background:
-  linear-gradient(135deg, rgba(159,69,61,0.18), transparent 52%),
-  linear-gradient(180deg, rgba(177,127,90,0.12), transparent),
-  #241812;pointer-events:none;}
-.g-choice.locked{opacity:0.3;pointer-events:none;}
-.gc-num{font-family:var(--display);font-size:0.7rem;color:var(--gold-dim);padding-top:2px;min-width:18px;}
-.gc-text{font-size:0.9rem;color:var(--ink);line-height:1.4;}
+.choice-prompt{color:#f4e6cf;font-size:0.84rem;margin-bottom:0.8rem;}
+.choices-list{display:flex;flex-direction:column;gap:10px;}
+.g-choice{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:1rem;border:1px solid var(--border);padding:1rem 1.2rem;cursor:pointer;transition:all 0.18s;background:var(--panel-2);text-align:left;width:100%;box-shadow:0 4px 12px rgba(58,36,21,0.14);}
+.g-choice:hover{border-color:var(--parch);background:#fbf0db;transform:translateY(-1px);}
+.g-choice.selected{border-color:var(--parch);background:#fdf3df;box-shadow:0 6px 18px rgba(58,36,21,0.24);pointer-events:none;}
+.g-choice.locked{opacity:0.4;pointer-events:none;}
+.gc-num{font-family:var(--display);font-size:0.78rem;color:var(--parch2);padding-top:2px;min-width:20px;font-weight:700;}
+.gc-text{font-size:0.96rem;color:var(--ink);line-height:1.5;}
 .gc-effects{display:flex;flex-direction:column;gap:3px;}
-.gc-effect{font-family:var(--mono);font-size:0.58rem;white-space:nowrap;}
-.eff-up{color:var(--green2);} .eff-dn{color:var(--red2);}
-.consequence-card{border:1px solid var(--border);padding:1.2rem 1.5rem;margin-top:4px;display:none;}
+.gc-effect{font-family:var(--mono);font-size:0.62rem;white-space:nowrap;font-weight:700;}
+.eff-up{color:var(--green);} .eff-dn{color:var(--red);}
+.consequence-card{border:1px solid var(--border);padding:1.3rem 1.6rem;margin-top:4px;display:none;background:var(--panel);box-shadow:0 6px 14px rgba(0,0,0,0.32);}
 .consequence-card.show{display:block;animation:fadeUp 0.3s ease;}
-.consequence-card.good{border-color:var(--green);background:rgba(109,108,63,0.12);}
-.consequence-card.bad{border-color:var(--red);background:rgba(159,69,61,0.12);}
-.consequence-card.mixed{border-color:var(--gold-dim);background:rgba(177,127,90,0.1);}
-.cons-label{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem;}
-.cons-label.good{color:var(--green2);} .cons-label.bad{color:var(--red2);} .cons-label.mixed{color:var(--gold);}
-.cons-text{font-size:0.88rem;color:var(--ink2);line-height:1.6;}
+.consequence-card.good{border-color:var(--gold);background:#ead7b7;}
+.consequence-card.bad{border-color:var(--red);background:#e8c8c2;}
+.consequence-card.mixed{border-color:var(--gold);background:#ead7b7;}
+.cons-label{font-family:var(--mono);font-size:0.66rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.5rem;font-weight:700;}
+.cons-label.good{color:var(--parch2);} .cons-label.bad{color:var(--red);} .cons-label.mixed{color:var(--parch2);}
+.cons-text{font-size:0.94rem;color:var(--ink);line-height:1.7;}
 .stat-change-bar{display:flex;gap:8px;margin-top:0.8rem;flex-wrap:wrap;}
-.sc-pill{font-family:var(--mono);font-size:0.62rem;padding:3px 8px;border-radius:2px;}
-.sc-up{background:rgba(61,155,85,0.2);color:var(--green2);border:1px solid var(--green);}
-.sc-dn{background:rgba(155,32,32,0.2);color:var(--red2);border:1px solid var(--red);}
+.sc-pill{font-family:var(--mono);font-size:0.66rem;padding:3px 8px;border-radius:2px;font-weight:700;}
+.sc-up{background:rgba(122,130,70,0.2);color:var(--green);border:1px solid var(--green);}
+.sc-dn{background:rgba(168,91,72,0.2);color:var(--red);border:1px solid var(--red);}
 .next-era-wrap{padding:1.5rem 3rem 3rem;display:none;}
 .next-era-wrap.show{display:block;}
 .btn-next-era{padding:0.9rem 2.5rem;}
 
 /* GAME SHEET */
-.game-sheet{background:
-  radial-gradient(circle at 82% 16%, rgba(109,108,63,0.12), transparent 24%),
-  linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
-  var(--bg3);border-left:1px solid var(--border);padding:1.5rem;overflow-y:auto;}
+.game-sheet{background:#bd9a6b;border-left:1px solid var(--border);padding:1.5rem;overflow-y:auto;}
 .gs-section{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
 .gs-section:last-child{border-bottom:none;}
-.gs-portrait{width:100%;aspect-ratio:1;background:
-  radial-gradient(circle at top, rgba(159,69,61,0.16), transparent 34%),
-  radial-gradient(circle at 82% 18%, rgba(109,108,63,0.12), transparent 28%),
-  linear-gradient(180deg, rgba(255,255,255,0.02), transparent),
-  var(--panel);
-border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.9rem;margin-bottom:0.8rem;position:relative;overflow:hidden;}
-.gs-name{font-family:var(--display);font-size:0.95rem;color:var(--parch);margin-bottom:0.2rem;font-weight:700;letter-spacing:-0.02em;}
-.gs-role{font-size:0.72rem;color:var(--ink3);font-style:italic;margin-bottom:0.8rem;}
+.gs-portrait{width:100%;aspect-ratio:1;background:var(--panel-2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:0.9rem;margin-bottom:0.8rem;position:relative;overflow:hidden;color:var(--parch);}
+.gs-name{font-family:var(--display);font-size:1rem;color:var(--parch);margin-bottom:0.2rem;font-weight:700;letter-spacing:-0.02em;}
+.gs-role{font-size:0.8rem;color:var(--parch2);font-style:italic;margin-bottom:0.8rem;}
 .gs-trait-list{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:0.5rem;}
-.gs-trait{font-family:var(--mono);font-size:0.58rem;padding:2px 7px;border:1px solid var(--border);color:var(--ink3);}
-.journal-entry{font-size:0.76rem;color:var(--ink3);line-height:1.5;font-style:italic;margin-bottom:0.5rem;padding-left:0.8rem;border-left:2px solid var(--border);}
-.journal-era{font-family:var(--mono);font-size:0.56rem;color:var(--gold-dim);margin-bottom:0.2rem;}
+.gs-trait{font-family:var(--mono);font-size:0.64rem;padding:2px 7px;border:1px solid var(--border);color:var(--parch);background:var(--panel-2);}
+.gs-label{color:var(--parch2);}
+.journal-entry{font-size:0.86rem;color:var(--ink2);line-height:1.55;font-style:italic;margin-bottom:0.5rem;padding-left:0.8rem;border-left:2px solid var(--border);}
+.journal-era{font-family:var(--mono);font-size:0.62rem;color:var(--parch);margin-bottom:0.2rem;font-weight:700;}
 
 /* END */
-#s-end{display:none;min-height:100vh;background:
-  radial-gradient(circle at 18% 18%, rgba(159,69,61,0.16), transparent 28%),
-  radial-gradient(circle at 82% 20%, rgba(109,108,63,0.14), transparent 26%),
-  var(--bg2);}
+#s-end{display:none;min-height:100vh;background:#3a2415;}
 #s-end.active{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem;text-align:center;}
-.end-grade{font-family:var(--display);font-size:6rem;font-weight:900;margin-bottom:0.5rem;}
-.grade-A{color:var(--gold);text-shadow:0 0 40px rgba(201,146,42,0.4);}
-.grade-B{color:var(--green2);}
-.grade-C{color:var(--stat-p);}
-.grade-D{color:var(--red2);}
-.end-title{font-family:var(--display);font-size:1.9rem;color:var(--parch);margin-bottom:0.5rem;font-weight:800;letter-spacing:-0.03em;}
-.end-subtitle{font-size:1rem;color:var(--ink3);font-style:italic;margin-bottom:2rem;}
-.end-rule{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);margin:0 auto 2rem;}
+#s-end .open-eyebrow{color:#d8c0a0;}
+.end-meter{font-family:var(--display);font-size:5.4rem;font-weight:900;color:#f4e6cf;letter-spacing:-0.03em;line-height:1;margin-bottom:0.4rem;}
+.end-meter-label{font-family:var(--display);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:#d8c0a0;font-weight:700;margin-bottom:1.4rem;}
+.end-title{font-family:var(--display);font-size:1.9rem;color:#f4e6cf;margin-bottom:0.5rem;font-weight:800;letter-spacing:-0.03em;}
+.end-subtitle{font-size:1.05rem;color:#d8c0a0;font-style:italic;margin-bottom:2rem;}
+.end-scale{max-width:520px;margin:0 auto 2rem;padding:1rem 1.4rem;border:1px solid #5e3d27;background:#2e1a10;color:#ead7b7;font-family:var(--serif);font-size:0.96rem;line-height:1.7;}
+.end-scale strong{font-family:var(--display);color:#f4e6cf;font-weight:700;}
+.end-rule{width:200px;height:1px;background:linear-gradient(90deg,transparent,#c9a87a,transparent);margin:0 auto 2rem;}
 .end-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:500px;margin:0 auto 2rem;}
-.end-stat-box{background:
-  linear-gradient(135deg, rgba(159,69,61,0.12), transparent 52%),
-  linear-gradient(180deg, rgba(255,255,255,0.015), transparent),
-  var(--panel);border:1px solid var(--border);padding:1rem 0.5rem;text-align:center;}
+.end-stat-box{background:var(--panel-2);border:1px solid var(--border);padding:1rem 0.5rem;text-align:center;}
 .esb-val{font-family:var(--display);font-size:1.8rem;font-weight:700;margin-bottom:0.3rem;}
-.esb-name{font-family:var(--mono);font-size:0.58rem;color:var(--ink3);letter-spacing:0.08em;}
-.end-verdict{max-width:520px;font-size:1rem;color:var(--ink2);line-height:1.75;margin-bottom:2rem;font-style:italic;}
+.esb-name{font-family:var(--mono);font-size:0.66rem;color:var(--parch2);letter-spacing:0.08em;font-weight:700;}
+.end-verdict{max-width:520px;font-size:1.04rem;color:#ead7b7;line-height:1.8;margin-bottom:2rem;font-style:italic;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 .fade-in{animation:fadeUp 0.35s ease;}
@@ -304,12 +232,15 @@ border:1px solid var(--border);display:flex;align-items:center;justify-content:c
 
 <!-- OPENING -->
 <div id="s-open" class="active">
-  <div class="open-eyebrow">Companion Archive Game · India 1947–2005</div>
-  <div class="open-title">Kanoon</div>
-  <div class="open-subtitle">The Hindu Succession Act · A Game File from The Unfinished Code</div>
+  <div class="open-eyebrow">A Companion Archive Game · India 1947 to 2005</div>
+  <div class="open-title" style="font-family:'Tiro Devanagari Marathi', var(--serif);">तडजोड</div>
+  <div class="open-translation">(translation: 'compromise' in Marathi)</div>
   <div class="open-rule"></div>
-  <p class="open-lede">Build your character. Navigate five eras of compromise, betrayal, and reform. Discover how Ambedkar's radical vision became the law — and what was lost along the way.</p>
-  <button class="btn-primary" id="btn-start">Open Character Dossier</button>
+  <p class="open-lede">Build a character and live through the century of compromise in different shoes. Navigate eras of transformation, reform and compromise.</p>
+  <button class="btn-primary" id="btn-start">Step into your story</button>
+  <div class="open-disclaimer">
+    This game does not fully capture the complexity of identities, ideas, or lived experiences. It offers a simplified and generalized depiction of the beliefs and realities of the period.
+  </div>
 </div>
 
 <!-- Character Dossier -->
@@ -318,99 +249,100 @@ border:1px solid var(--border);display:flex;align-items:center;justify-content:c
     <div class="create-left">
       <div class="create-step-label">Character Dossier</div>
       <div class="create-heading">Who Are You?</div>
-      <div class="create-sub">Your background shapes your rights, your power, and your story across five eras of Indian legal history.</div>
+      <div class="create-sub">Your background decides what rights you can claim, what property you can hold, and how the law lands on your life across five eras of Indian legal history.</div>
 
       <div class="section-label">I. Gender</div>
       <div class="choice-grid" id="grid-gender">
-        <div class="c-option" data-group="gender" data-val="woman" data-icon="WM" data-name="Woman" data-desc="You will inherit — or be denied. The law's effects fall most directly on you." data-traits='["Female","Inheritance claimant"]' data-stats='{"W":10,"J":5,"P":5,"C":5}'>
+        <div class="c-option" data-group="gender" data-val="woman" data-icon="WM" data-name="Woman" data-desc="A Hindu woman in this period holds property only as a limited estate under the 1937 Act. The land you live on is in someone else's name, and the law of succession was drafted for households that did not put you in the will." data-traits='["Female","Limited estate holder"]' data-stats='{"W":3,"J":8,"P":3,"C":10}'>
           <span class="c-opt-icon">WM</span>
           <div class="c-opt-name">Woman</div>
-          <div class="c-opt-desc">You will inherit — or be denied. The law's effects fall most directly on you.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-w">W +10</span><span class="stat-tag tag-j">J +5</span></div>
+          <div class="c-opt-desc">A Hindu woman in this period holds property only as a limited estate. The land in the household is rarely in your name, and the law of succession was drafted for families that did not list you among the heirs.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +3</span><span class="stat-tag tag-pos">J +8</span><span class="stat-tag tag-pos">P +3</span><span class="stat-tag tag-pos">C +10</span></div>
+          <div class="c-opt-note">Lower wealth than a man because of limited inheritance rights under the Hindu Women's Right to Property Act, 1937. Property held by a Hindu woman reverts to her husband's male relatives on her death.</div>
         </div>
-        <div class="c-option" data-group="gender" data-val="man" data-icon="MN" data-name="Man" data-desc="You hold the default legal position. Reform may feel like loss — or justice." data-traits='["Male","Default heir"]' data-stats='{"W":5,"J":5,"P":10,"C":5}'>
+        <div class="c-option" data-group="gender" data-val="man" data-icon="MN" data-name="Man" data-desc="A Hindu man in this period sits inside the joint family as a coparcener by birth. Ancestral property passes by survivorship through your line, and the existing law of intestacy treats you as the natural heir." data-traits='["Male","Default heir"]' data-stats='{"W":10,"J":3,"P":10,"C":2}'>
           <span class="c-opt-icon">MN</span>
           <div class="c-opt-name">Man</div>
-          <div class="c-opt-desc">You hold the default legal position. Reform may feel like loss — or justice.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-p">P +10</span><span class="stat-tag tag-w">W +5</span></div>
+          <div class="c-opt-desc">A Hindu man in this period sits inside the joint family as a coparcener by birth. Ancestral property passes through your line by survivorship, and the existing law of intestacy treats you as the natural heir.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +10</span><span class="stat-tag tag-pos">J +3</span><span class="stat-tag tag-pos">P +10</span><span class="stat-tag tag-pos">C +2</span></div>
         </div>
       </div>
 
       <div class="section-label">II. Caste Background</div>
       <div class="choice-grid cols-3" id="grid-caste">
-        <div class="c-option" data-group="caste" data-val="brahmin" data-icon="BR" data-name="Brahmin" data-desc="High ritual status, high political access. The most to lose from reform." data-traits='["High caste","Political access","Landholder"]' data-stats='{"W":15,"J":-5,"P":15,"C":0}'>
+        <div class="c-option" data-group="caste" data-val="brahmin" data-icon="BR" data-name="Brahmin" data-desc="A Brahmin household in this period combines ritual standing with political access. Much of the joint family property the new Code is being drafted around sits with families of your standing, which is why your community is sending the loudest petitions against the Bill." data-traits='["High caste","Political access","Landholder"]' data-stats='{"W":15,"J":-5,"P":15,"C":0}'>
           <span class="c-opt-icon">BR</span>
           <div class="c-opt-name">Brahmin</div>
-          <div class="c-opt-desc">High ritual status, high political access. The most to lose from reform.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-w">W +15</span><span class="stat-tag tag-p">P +15</span></div>
+          <div class="c-opt-desc">A Brahmin household combines ritual standing with political access. Most of the joint family property the Act is drafted around sits with families of your standing, so reform reads as a direct cost to your settlement.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +15</span><span class="stat-tag tag-neg">J −5</span><span class="stat-tag tag-pos">P +15</span></div>
         </div>
-        <div class="c-option" data-group="caste" data-val="obc" data-icon="OB" data-name="OBC / Shudra" data-desc="Middle strata. Caught between caste hierarchy and reform promises." data-traits='["Middle caste","Contested rights"]' data-stats='{"W":8,"J":5,"P":5,"C":10}'>
+        <div class="c-option" data-group="caste" data-val="obc" data-icon="OB" data-name="OBC / Shudra" data-desc="An OBC or Shudra household sits in the middle layer of the caste hierarchy. Sections of the Act speak to your interests, but the older customary order still applies inside the village, and you are often expected to take sides on disputes that were not framed by you." data-traits='["Middle caste","Contested rights"]' data-stats='{"W":8,"J":5,"P":5,"C":10}'>
           <span class="c-opt-icon">OB</span>
           <div class="c-opt-name">OBC / Shudra</div>
-          <div class="c-opt-desc">Middle strata. Caught between hierarchy and reform promises.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-w">W +8</span><span class="stat-tag tag-c">C +10</span></div>
+          <div class="c-opt-desc">An OBC or Shudra household sits in the middle layer of the hierarchy. Parts of the Act speak to your interests, but the customary order still applies inside the village, and you are often pulled into disputes you did not frame.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +8</span><span class="stat-tag tag-pos">J +5</span><span class="stat-tag tag-pos">P +5</span><span class="stat-tag tag-pos">C +10</span></div>
         </div>
-        <div class="c-option" data-group="caste" data-val="dalit" data-icon="DL" data-name="Dalit / SC" data-desc="Doubly excluded. The law's promise is furthest — and most needed." data-traits='["Scheduled Caste","Land-dispossessed","Ambedkarite"]' data-stats='{"W":0,"J":15,"P":0,"C":15}'>
+        <div class="c-option" data-group="caste" data-val="dalit" data-icon="DL" data-name="Dalit / SC" data-desc="A Dalit household is structurally excluded from the property base on which the Hindu Succession Act actually operates. Several generations of land dispossession sit behind you, and the equal-succession provision in the Act lands the furthest from where your community currently stands." data-traits='["Scheduled Caste","Land-dispossessed","Ambedkarite"]' data-stats='{"W":0,"J":15,"P":0,"C":15}'>
           <span class="c-opt-icon">DL</span>
           <div class="c-opt-name">Dalit / SC</div>
-          <div class="c-opt-desc">Doubly excluded. The law's promise is furthest — and most needed.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-j">J +15</span><span class="stat-tag tag-c">C +15</span></div>
+          <div class="c-opt-desc">A Dalit household is structurally excluded from the property base the Act operates on. Generations of land dispossession sit behind you, and equal succession is the furthest provision from where your community stands.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">J +15</span><span class="stat-tag tag-pos">C +15</span></div>
         </div>
       </div>
 
       <div class="section-label">III. Class &amp; Livelihood</div>
       <div class="choice-grid" id="grid-class">
-        <div class="c-option" data-group="class" data-val="landlord" data-icon="LD" data-name="Landlord" data-desc="You hold ancestral land through the coparcenary. Every reform is a direct threat." data-traits='["Propertied","Coparcener","Rural elite"]' data-stats='{"W":15,"J":-10,"P":10,"C":0}'>
+        <div class="c-option" data-group="class" data-val="landlord" data-icon="LD" data-name="Landlord" data-desc="A landlord household holds ancestral land through the Mitakshara coparcenary, with revenue records and tenancy agreements drawn up in the names of male coparceners. Any amendment that touches Section 6 reaches directly into your family settlement and your tax position." data-traits='["Propertied","Coparcener","Rural elite"]' data-stats='{"W":15,"J":-10,"P":10,"C":0}'>
           <span class="c-opt-icon">LD</span>
           <div class="c-opt-name">Landlord</div>
-          <div class="c-opt-desc">Ancestral land held through the coparcenary. Reform is a direct threat.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-w">W +15</span><span class="stat-tag tag-p">P +10</span></div>
+          <div class="c-opt-desc">A landlord household holds ancestral land through the Mitakshara coparcenary. Revenue records sit in male names, and any amendment to Section 6 reaches into both the family settlement and the tax position.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +15</span><span class="stat-tag tag-neg">J −10</span><span class="stat-tag tag-pos">P +10</span></div>
         </div>
-        <div class="c-option" data-group="class" data-val="urban" data-icon="UP" data-name="Urban Professional" data-desc="Educated, employed. Reform feels distant until it becomes personal." data-traits='["Urban","Salaried","Middle class"]' data-stats='{"W":5,"J":10,"P":8,"C":5}'>
+        <div class="c-option" data-group="class" data-val="urban" data-icon="UP" data-name="Urban Professional" data-desc="An urban professional draws a salary, holds a flat or savings as self-acquired property, and follows personal law reform in the newspaper rather than at the Sub-Registrar's office. The Act feels academic, until a sister or daughter in the family decides to file a partition suit." data-traits='["Urban","Salaried","Middle class"]' data-stats='{"W":5,"J":10,"P":8,"C":5}'>
           <span class="c-opt-icon">UP</span>
           <div class="c-opt-name">Urban Professional</div>
-          <div class="c-opt-desc">Educated, employed. Reform feels distant until it becomes personal.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-j">J +10</span><span class="stat-tag tag-p">P +8</span></div>
+          <div class="c-opt-desc">An urban professional draws a salary and holds a flat or savings as self-acquired property. The Act feels academic, until a sister or daughter in the family files a partition suit.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +5</span><span class="stat-tag tag-pos">J +10</span><span class="stat-tag tag-pos">P +8</span><span class="stat-tag tag-pos">C +5</span></div>
         </div>
-        <div class="c-option" data-group="class" data-val="peasant" data-icon="SF" data-name="Small Farmer" data-desc="You work the land but may not own it. The gap between law and practice is your life." data-traits='["Rural","Smallholder","Subsistence"]' data-stats='{"W":3,"J":8,"P":3,"C":15}'>
+        <div class="c-option" data-group="class" data-val="peasant" data-icon="SF" data-name="Small Farmer" data-desc="A small farmer works the land each season even when the title remains in the name of a male relative or has not been mutated for two generations. The distance between what the statute promises and what the village patwari actually records is the distance your life is lived in." data-traits='["Rural","Smallholder","Subsistence"]' data-stats='{"W":3,"J":8,"P":3,"C":15}'>
           <span class="c-opt-icon">SF</span>
           <div class="c-opt-name">Small Farmer</div>
-          <div class="c-opt-desc">You work the land but may not own it. The gap between law and practice is your life.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-j">J +8</span><span class="stat-tag tag-c">C +15</span></div>
+          <div class="c-opt-desc">A small farmer works the land each season even when the title is in another name. The distance between what the statute promises and what the patwari records is the distance your life is lived in.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +3</span><span class="stat-tag tag-pos">J +8</span><span class="stat-tag tag-pos">P +3</span><span class="stat-tag tag-pos">C +15</span></div>
         </div>
-        <div class="c-option" data-group="class" data-val="activist" data-icon="LA" data-name="Lawyer / Activist" data-desc="You argue the law, write the briefs, march on Parliament. The system is your arena." data-traits='["Legal literacy","Organiser","Reform advocate"]' data-stats='{"W":5,"J":15,"P":5,"C":5}'>
+        <div class="c-option" data-group="class" data-val="activist" data-icon="LA" data-name="Lawyer / Activist" data-desc="A lawyer or activist reads bare acts as a daily practice, drafts writ petitions, and sits in on parliamentary standing committee hearings. Personal law reform is both your case file and your political work, and you are often the person other households turn to when the records office refuses to listen." data-traits='["Legal literacy","Organiser","Reform advocate"]' data-stats='{"W":5,"J":15,"P":5,"C":5}'>
           <span class="c-opt-icon">LA</span>
           <div class="c-opt-name">Lawyer / Activist</div>
-          <div class="c-opt-desc">You argue the law, march on Parliament. The system is your arena.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-j">J +15</span><span class="stat-tag tag-w">W +5</span></div>
+          <div class="c-opt-desc">A lawyer or activist reads bare acts daily, drafts writ petitions, and sits in on standing committee hearings. Personal law reform is both your case file and your political work.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +5</span><span class="stat-tag tag-pos">J +15</span><span class="stat-tag tag-pos">P +5</span><span class="stat-tag tag-pos">C +5</span></div>
         </div>
       </div>
 
       <div class="section-label">IV. Where Do You Live?</div>
       <div class="choice-grid" id="grid-location">
-        <div class="c-option" data-group="location" data-val="city" data-icon="DB" data-name="Delhi / Bombay" data-desc="At the centre of power. Reform reaches you first." data-traits='["Metropolitan","Policy proximity"]' data-stats='{"W":8,"J":5,"P":10,"C":0}'>
+        <div class="c-option" data-group="location" data-val="city" data-icon="DB" data-name="Delhi / Bombay" data-desc="A resident of Delhi or Bombay lives in the same cities where the Bills are drafted, the Cabinet meets, and the major newspapers run their editorials. Bar associations and women's organisations let you follow each stage of personal law reform in something close to real time." data-traits='["Metropolitan","Policy proximity"]' data-stats='{"W":8,"J":5,"P":10,"C":0}'>
           <span class="c-opt-icon">DB</span>
           <div class="c-opt-name">Delhi / Bombay</div>
-          <div class="c-opt-desc">At the centre of power. Reform reaches you first.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-p">P +10</span><span class="stat-tag tag-w">W +8</span></div>
+          <div class="c-opt-desc">A resident of Delhi or Bombay lives where the Bills are drafted and the Cabinet meets. Bar associations and the press let you follow each stage of personal law reform closely.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +8</span><span class="stat-tag tag-pos">J +5</span><span class="stat-tag tag-pos">P +10</span></div>
         </div>
-        <div class="c-option" data-group="location" data-val="state" data-icon="SK" data-name="Andhra / Tamil Nadu / Kerala" data-desc="Progressive states that pass their own amendments before the centre acts." data-traits='["Progressive state","Early reform"]' data-stats='{"W":5,"J":12,"P":5,"C":5}'>
+        <div class="c-option" data-group="location" data-val="state" data-icon="SK" data-name="Andhra / Tamil Nadu / Kerala" data-desc="A resident of Andhra Pradesh, Tamil Nadu or Kerala benefits from a state legislature that did not wait for Parliament. State-level amendments to the Hindu Succession Act recognised daughters as coparceners well before the central amendment in 2005." data-traits='["Progressive state","Early reform"]' data-stats='{"W":5,"J":12,"P":5,"C":5}'>
           <span class="c-opt-icon">SK</span>
           <div class="c-opt-name">Andhra / TN / Kerala</div>
-          <div class="c-opt-desc">Your state acts before the centre. Reform comes earlier here.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-j">J +12</span><span class="stat-tag tag-w">W +5</span></div>
+          <div class="c-opt-desc">Your state legislature did not wait for Parliament. State amendments to the Act recognised daughters as coparceners well before the central amendment in 2005.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +5</span><span class="stat-tag tag-pos">J +12</span><span class="stat-tag tag-pos">P +5</span><span class="stat-tag tag-pos">C +5</span></div>
         </div>
-        <div class="c-option" data-group="location" data-val="north" data-icon="NR" data-name="UP / Bihar / Rajasthan" data-desc="Conservative heartlands. Reform comes late and is resisted." data-traits='["Conservative belt","Reform lag"]' data-stats='{"W":3,"J":3,"P":3,"C":12}'>
+        <div class="c-option" data-group="location" data-val="north" data-icon="NR" data-name="UP / Bihar / Rajasthan" data-desc="Uttar Pradesh, Bihar and Rajasthan formed the heartland of the orthodox opposition that defeated the Hindu Code Bill in 1951. State amendments to Section 6 never arrived here, and reform is contested at every revenue office and partition hearing." data-traits='["Conservative belt","Reform lag"]' data-stats='{"W":3,"J":3,"P":3,"C":12}'>
           <span class="c-opt-icon">NR</span>
           <div class="c-opt-name">UP / Bihar / Rajasthan</div>
-          <div class="c-opt-desc">Reform comes late here. You wait the longest.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-c">C +12</span></div>
+          <div class="c-opt-desc">UP, Bihar and Rajasthan formed the orthodox opposition that defeated the 1951 Bill. State amendments to Section 6 never arrived here, and reform is contested at every revenue office.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">W +3</span><span class="stat-tag tag-pos">J +3</span><span class="stat-tag tag-pos">P +3</span><span class="stat-tag tag-pos">C +12</span></div>
         </div>
-        <div class="c-option" data-group="location" data-val="village" data-icon="RT" data-name="Remote / Tribal Area" data-desc="Customary law still rules. The Hindu Succession Act may not even reach you." data-traits='["Customary law zone","Policy gap"]' data-stats='{"W":0,"J":5,"P":0,"C":15}'>
+        <div class="c-option" data-group="location" data-val="village" data-icon="RT" data-name="Remote / Tribal Area" data-desc="A household in a remote or tribal area lives under customary succession rules, and Section 2(2) of the Hindu Succession Act expressly keeps Scheduled Tribes outside the operation of the statute. The reform may not reach your district within your lifetime." data-traits='["Customary law zone","Policy gap"]' data-stats='{"W":0,"J":5,"P":0,"C":15}'>
           <span class="c-opt-icon">RT</span>
           <div class="c-opt-name">Remote / Tribal Area</div>
-          <div class="c-opt-desc">Customary law still rules. The Act may not reach you at all.</div>
-          <div class="c-opt-stats"><span class="stat-tag tag-c">C +15</span><span class="stat-tag tag-j">J +5</span></div>
+          <div class="c-opt-desc">Customary law still governs succession here. Section 2(2) of the Act keeps Scheduled Tribes outside the statute, and the reform may not reach your district at all.</div>
+          <div class="c-opt-stats"><span class="stat-tag tag-pos">J +5</span><span class="stat-tag tag-pos">C +15</span></div>
         </div>
       </div>
     </div>
@@ -438,7 +370,12 @@ border:1px solid var(--border);display:flex;align-items:center;justify-content:c
           <div class="stat-header"><div class="stat-name">COMMUNITY NEED (C)</div><div class="stat-val sv-c" id="sv-C">0</div></div>
           <div class="stat-track"><div class="stat-fill sf-c" id="sf-C" style="width:0%"></div></div>
         </div>
-        <div class="stat-hint">W = property stake &nbsp;·&nbsp; J = ability to claim rights &nbsp;·&nbsp; P = political influence &nbsp;·&nbsp; C = urgency of reform needed</div>
+        <div class="stat-hint">
+          <div style="margin-bottom:4px;"><strong>W</strong> = property scale</div>
+          <div style="margin-bottom:4px;"><strong>J</strong> = ability to claim rights</div>
+          <div style="margin-bottom:4px;"><strong>P</strong> = political influence</div>
+          <div><strong>C</strong> = urgency of reform needed</div>
+        </div>
       </div>
       <div class="section-label">Traits Unlocked</div>
       <div class="trait-chips" id="char-traits"><span class="trait-chip">No traits yet</span></div>
@@ -499,10 +436,14 @@ border:1px solid var(--border);display:flex;align-items:center;justify-content:c
 <!-- END -->
 <div id="s-end">
   <div class="open-eyebrow">End of Game · 2005</div>
-  <div class="end-grade" id="end-grade">A</div>
+  <div class="end-meter" id="end-meter">0%</div>
+  <div class="end-meter-label">Compromise Impact Index</div>
   <div class="end-title" id="end-title">—</div>
   <div class="end-subtitle" id="end-subtitle">—</div>
   <div class="end-rule"></div>
+  <div class="end-scale">
+    <strong>How to read this number.</strong> The percentage above is the Compromise Impact Index. It measures how directly your character was affected by the compromises baked into the Hindu Succession Act, 1956 and the long delay before the 2005 amendment. <strong>1%</strong> means the compromise barely touched your life. <strong>100%</strong> means your life was shaped almost entirely by what the law did not deliver. The figure is calculated from the choices you made across the five eras, weighted by your final Justice access, urgency of reform needed, wealth, and political influence.
+  </div>
   <div class="end-stats">
     <div class="end-stat-box"><div class="esb-val sv-w" id="end-W">—</div><div class="esb-name">WEALTH</div></div>
     <div class="end-stat-box"><div class="esb-val sv-j" id="end-J">—</div><div class="esb-name">JUSTICE</div></div>
@@ -548,161 +489,161 @@ function getScene(era){
 
   const scenes=[
     {// ERA 0
-      narration:`Independence has arrived. Dr. B.R. Ambedkar — Law Minister, Dalit intellectual, constitutional architect — has drafted the most radical reform in Hindu personal law India has ever seen. The Hindu Code Bill proposes abolishing the Mitakshara coparcenary, giving women absolute property rights, and granting equal inheritance to daughters.`,
+      narration:`Independence has arrived. Dr. B.R. Ambedkar, Law Minister and chief draftsman of the Constitution, has placed the Hindu Code Bill on the table of the Constituent Assembly. It is the most ambitious reform of Hindu personal law the country has ever seen. It proposes to abolish the Mitakshara coparcenary, vest absolute ownership of property in Hindu women, and recognise daughters as equal heirs in their father's estate.`,
       dialogue:[
-        {icon:'AR',name:'Dr. Ambedkar',tag:'Law Minister, 1948',speech:`The Hindu Code Bill is not merely a legal reform. It is the social revolution that must accompany political independence. Without reforming inheritance and property, equality on paper is a lie.`,type:'default'},
-        {icon,name:nameTag,tag:'That\'s you',speech:isW
-          ?(isDalit?`You are a Dalit woman in ${locLabel()}. You have no property. You have no legal identity in succession. Ambedkar's bill is the first time anyone has proposed that someone like you might have rights.`
-          :`You are a woman in ${locLabel()}. The law treats your property as a "limited estate" — temporary custody that reverts to your husband's male relatives. Ambedkar's bill would make it absolutely yours.`)
-          :(isBrahmin&&isLandlord?`You are a Brahmin landlord in ${locLabel()}. Your family's wealth sits in the Mitakshara coparcenary — joint ancestral property passing through the male line. Ambedkar wants to abolish it. This is a direct threat.`
-          :`You are a ${ca} ${cl} in ${locLabel()}. The Hindu Code Bill is being debated. How it lands depends entirely on who you are.`),
+        {icon:'AR',name:'Dr. Ambedkar',tag:'Law Minister, 1948',speech:`The Hindu Code Bill is not merely a legal reform. It is the social revolution that must accompany political independence. Without rewriting the law of inheritance and the law of marriage, the equality clause in our Constitution is a paper guarantee and nothing more.`,type:'default'},
+        {icon,name:nameTag,tag:'That is you',speech:isW
+          ?(isDalit?`You are a Dalit woman in ${locLabel()}. You hold no property in your name. Under the prevailing schools of Hindu law you have no independent identity in succession at all. Ambedkar's Bill is the first time the Government of India has even pretended that someone like you might be a coparcener, an heir, or a person before the law.`
+          :`You are a Hindu woman in ${locLabel()}. The Hindu Women's Right to Property Act, 1937 gives you only a limited estate, a kind of life interest that reverts to your husband's male relatives the day you die. Ambedkar's draft would make that property absolutely yours under a single section of the new Code.`)
+          :(isBrahmin&&isLandlord?`You are a Brahmin landlord in ${locLabel()}. Your family's wealth sits in the Mitakshara coparcenary, the joint ancestral estate that passes by survivorship through the male line. Ambedkar proposes to abolish that doctrine outright. The proposal is a direct threat to the way your household has held land for generations.`
+          :`You are a ${ca} ${cl} in ${locLabel()}. The Hindu Code Bill is on the floor of the House. How it lands on your life depends entirely on who you are when it arrives.`),
           type:isW?'player-speech':(isBrahmin&&isLandlord?'enemy-speech':'default')},
       ],
-      doc:{label:'Hindu Code Bill, 1948 — Key Proposals',text:`<strong>Coparcenary abolished</strong> — ancestral property becomes individual, inheritable by all.\n<strong>Widow's estate</strong> — any property a widow holds becomes her <em>absolute</em> property.\n<strong>Daughters</strong> — inherit equally with sons from the father's separate property.\n<strong>Divorce</strong> — Hindu women gain the right to seek divorce.\n<strong>Caste barriers</strong> — inter-caste marriages validated.`},
-      prompt:'How do you respond to Ambedkar\'s proposal?',
+      doc:{label:'Hindu Code Bill, 1948. Key proposals',text:`<strong>Abolition of the Mitakshara coparcenary.</strong> Ancestral property becomes individually owned and freely heritable.\n<strong>Section on widow's estate.</strong> Any property a Hindu widow holds becomes her <em>absolute</em> property in law.\n<strong>Daughters as Class I heirs.</strong> Sons and daughters inherit equally from the father's separate estate.\n<strong>Right to divorce.</strong> Hindu women acquire a statutory right to seek dissolution of marriage.\n<strong>Inter-caste marriage.</strong> Marriages across caste are validated by statute.`},
+      prompt:'How do you respond to Ambedkar\'s draft Bill?',
       choices:[
-        {text:isW?'Join the women\'s march to Parliament demanding the bill be passed':(isBrahmin?'Organise opposition — write to Congress MPs, invoke dharma and tradition':'Study the bill carefully — understand exactly what it means for you'),
+        {text:isW?'March on Parliament with the All India Women\'s Conference, demanding the Bill be enacted in full':(isBrahmin?'Organise opposition. Write to Congress MPs, brief the Hindu Mahasabha, frame the Bill as an attack on dharma':'Study the Bill clause by clause and understand exactly what each section will do to your family'),
          fx:isW?{W:0,J:8,P:3,C:0}:(isBrahmin?{W:5,J:-3,P:8,C:0}:{W:0,J:5,P:0,C:0}),
          out:isW?'good':(isBrahmin?'mixed':'good'),
-         cons:isW?'You join the All India Women\'s Conference march. Thousands descend on Parliament. The bill gains momentum — but the old guard is being quietly mobilised against it.'
-           :(isBrahmin?'Your letters reach Congress backbenchers. The Hindu Mahasabha issues statements supporting your position. Nehru is under pressure. The bill will be deferred.'
-           :'You read the full text. For the first time, you understand exactly what Ambedkar is proposing — and exactly what the opposition is defending. Knowledge is your first asset.'),
-         jnl:isW?'Marched on Parliament for Ambedkar\'s bill.':(isBrahmin?'Organised opposition to the Hindu Code Bill.':'Read the Hindu Code Bill in full.')},
-        {text:isW?'Speak to your family — try to build support from within':(isBrahmin?'Support the bill — accept reform, even if it costs you':'Support the bill publicly — write, organise, speak'),
+         cons:isW?'You join the All India Women\'s Conference march. Thousands of women descend on Parliament Street to demand absolute ownership and equal succession. The Bill gains momentum in the press, but inside the Constituent Assembly the orthodox bloc is already organising against it.'
+           :(isBrahmin?'Your letters reach Congress backbenchers. The Hindu Mahasabha and Shyama Prasad Mookerjee issue statements supporting your position. Pressure builds on Nehru, who decides to defer the Bill until after the first general election. The provisions on coparcenary will not survive that delay.'
+           :'You read the Bill in full. For the first time you understand what abolition of survivorship would actually mean for your family, and what the opposition is so determined to protect. Knowing the statute is your first asset in any fight over it.'),
+         jnl:isW?'Marched on Parliament for the Hindu Code Bill.':(isBrahmin?'Organised orthodox opposition to the Hindu Code Bill.':'Read the Hindu Code Bill clause by clause.')},
+        {text:isW?'Try to build support inside the family. Talk to fathers, brothers and husbands about the Bill on its own terms':(isBrahmin?'Break with your caste peers and back the Bill in public, even at the cost of your standing':'Support the Bill publicly. Write, organise, speak, and put your name on the record'),
          fx:isW?{W:0,J:3,P:0,C:5}:(isBrahmin?{W:-8,J:10,P:-5,C:0}:{W:0,J:8,P:5,C:0}),
          out:'mixed',
-         cons:isW?'Your father-in-law calls the bill anti-Hindu. Your husband says nothing. You understand now that the personal is deeply political.'
-           :(isBrahmin?'Your support for the bill is unusual among your caste peers. You face social ostracism — but you know Ambedkar is right. Justice cannot be postponed.'
-           :'You write a pamphlet. Speak at a meeting. The reform movement grows. But orthodoxy has more money and more seats in Parliament.'),
-         jnl:isW?'Tried to build family support for reform.':(isBrahmin?'Broke with caste peers to support the bill.':'Began organising for the Hindu Code Bill.')},
-        {text:'Wait and watch. The bill may not pass — why burn bridges now?',
+         cons:isW?'Your father-in-law calls the Bill anti-Hindu and refuses to discuss it. Your husband says nothing. You realise that the joint family is itself a political institution, and that personal law reform will not be won at the dining table alone.'
+           :(isBrahmin?'You are ostracised by your caste peers. Old friends stop calling. But you have read the Bill, you have read Ambedkar\'s notes, and you know that postponing equality in the name of social peace is not a neutral act. Justice deferred is justice that someone else is paying for.'
+           :'You write a pamphlet. You speak at a public meeting. The reform movement grows in your city, but the orthodox lobby has more money, more newspapers, and more votes inside the Congress Parliamentary Party.'),
+         jnl:isW?'Tried to build support for the Bill within the family.':(isBrahmin?'Broke with caste peers to back the Hindu Code Bill.':'Began publicly organising for the Hindu Code Bill.')},
+        {text:'Wait and watch. The Bill may not even pass. There is no need to take a position yet.',
          fx:{W:0,J:-3,P:0,C:3},out:'bad',
-         cons:'The bill stalls in committee. Ambedkar grows frustrated. Those who waited have nothing to show for it — no movement built, no pressure applied. Waiting is itself a political choice.',
-         jnl:'Chose to wait rather than act on the Hindu Code Bill.'},
+         cons:'The Bill stalls in select committee. Ambedkar grows frustrated with the delay. Those who waited and watched have nothing to show for it. No constituency built, no record on the floor of the House, no pressure on Nehru. Waiting is itself a political position, and in this case it sides with the lobby that wants nothing to change.',
+         jnl:'Chose to wait and watch rather than act on the Bill.'},
       ]
     },
     {// ERA 1
-      narration:`Ambedkar's Hindu Code Bill is tabled. The debate is ferocious. President Rajendra Prasad privately opposes it. RSS and Hindu Mahasabha mobilise. Nehru defers the bill until after the 1951 general election. Ambedkar resigns. The full bill lapses.`,
+      narration:`The Hindu Code Bill is now formally tabled. The debate inside Parliament is ferocious. President Rajendra Prasad privately tells Nehru he will refuse to sign such a Bill into law. The Rashtriya Swayamsevak Sangh and the Hindu Mahasabha hold rallies against it. Nehru, anxious about the first general election, agrees to defer the Bill. Ambedkar resigns from the Cabinet on 27 September 1951, and the full Bill lapses with that Parliament.`,
       dialogue:[
-        {icon:'AR',name:'Dr. Ambedkar',tag:'Resignation Letter, 1951',speech:`I have failed. Not from lack of effort, but from lack of political will. The bill that would have changed millions of lives has been sacrificed on the altar of electoral convenience. I am not interested in continuing as a minister.`,type:'default'},
-        {icon:'PM',name:'Prime Minister Nehru',tag:'Parliament',speech:`We will return to the bill after the elections. There are four acts we can pass separately — Marriage, Succession, Guardianship, Adoption. Let us take what we can. Half a loaf is better than none.`,type:'enemy-speech'},
+        {icon:'AR',name:'Dr. Ambedkar',tag:'Resignation statement, 1951',speech:`I have failed, and I have failed not for want of effort but for want of political will in this Cabinet. The Bill that would have changed the lives of millions of Hindu women has been sacrificed for the sake of electoral convenience. I am no longer willing to continue as Law Minister.`,type:'default'},
+        {icon:'PM',name:'Prime Minister Nehru',tag:'Lok Sabha, 1952',speech:`We will return to the Bill after the elections. There are four separate enactments we can carry through this House: a Marriage Act, a Succession Act, a Guardianship Act and an Adoption Act. Let us take what we can take. Half a loaf is better than no loaf.`,type:'enemy-speech'},
       ],
-      doc:{label:'Ambedkar\'s Resignation — What He Said',text:`<em>"There is no subject of social importance which is not within the four corners of the Hindu Code Bill. Caste. Marriage. Inheritance. Women's rights. The House has been pleased not to proceed with it."</em>\n\n— B.R. Ambedkar, letter to Nehru, October 1951`},
-      prompt:'Ambedkar has resigned. The full bill has lapsed. What do you do?',
+      doc:{label:'Ambedkar on the lapsing of the Bill',text:`<em>"There is no part of our social life which is not within the four corners of the Hindu Code Bill. Caste, marriage, inheritance, the rights of women. The House has been pleased not to proceed with it, and I am not prepared to continue."</em>\n\nB.R. Ambedkar, letter to the Prime Minister, October 1951.`},
+      prompt:'Ambedkar has resigned. The Bill has lapsed. How do you carry on?',
       choices:[
-        {text:isW?'Keep pressure on Parliament — demand Nehru honour his promise':(isBrahmin||isLandlord?'Claim victory — the coparcenary is safe, for now':'Support the four partial acts — something is better than nothing'),
+        {text:isW?'Keep the pressure on Parliament. Hold Nehru to his public undertaking that the four split Bills will be introduced':(isBrahmin||isLandlord?'Treat this as a victory. The coparcenary survives the election cycle, and Section 6 will be drafted with that in mind':'Back the four split enactments. A Marriage Act and a Succession Act on the books are better than a Code that never reaches the Gazette'),
          fx:isW?{W:0,J:8,P:3,C:0}:(isBrahmin||isLandlord?{W:5,J:0,P:5,C:0}:{W:0,J:5,P:0,C:3}),
          out:isW?'good':(isBrahmin||isLandlord?'mixed':'good'),
-         cons:isW?'You keep the pressure alive. When the four partial acts are introduced in 1955-56, your advocacy helps shape what survives. Section 14 — absolute ownership — is real.'
-           :(isBrahmin||isLandlord?'You celebrate. The coparcenary is intact. Section 6 will preserve the male monopoly on ancestral property. But smaller reform is coming, and you cannot stop everything.'
-           :'The four partial acts pass. The absolute ownership provision under Section 14 is established. Not everything Ambedkar wanted — but it matters to millions of women.'),
-         jnl:isW?'Kept pressure on Parliament after Ambedkar\'s resignation.':(isBrahmin||isLandlord?'Celebrated the defeat of the full Hindu Code Bill.':'Supported the four partial reform acts.')},
-        {text:'Challenge the constitutionality of the delay in the Supreme Court',
+         cons:isW?'You keep the agitation alive in newspapers, in the AIWC, and at every constituency meeting. When the four split Bills are introduced in 1955 and 1956, your advocacy helps shape what actually survives the drafting committee. Section 14 of the Hindu Succession Act, vesting absolute ownership in Hindu women, is in part your work.'
+           :(isBrahmin||isLandlord?'Your bloc celebrates. The Mitakshara coparcenary is intact for another generation. Section 6, when it is drafted, will preserve survivorship and the male monopoly on ancestral property. Smaller reforms are still coming, but the structural fight has been postponed.'
+           :'The four split enactments pass between 1955 and 1956. Section 14 of the Hindu Succession Act vests absolute ownership in Hindu women for the first time in the history of the country. It is not everything Ambedkar drafted in 1948, but it changes the law for millions of women overnight.'),
+         jnl:isW?'Held Parliament to its undertaking after Ambedkar\'s resignation.':(isBrahmin||isLandlord?'Celebrated the lapse of the Hindu Code Bill.':'Supported the four split enactments of 1955 and 1956.')},
+        {text:'File a writ petition in the Supreme Court challenging the deferral of personal law reform on constitutional grounds',
          fx:{W:-5,J:10,P:0,C:3},out:'mixed',
-         cons:'The courts are reluctant to interfere in legislative timelines. Your case is dismissed. But the legal arguments you build — that personal law reform is a constitutional imperative — will be cited in future cases decades later.',
-         jnl:'Filed a Supreme Court challenge on constitutional grounds.'},
-        {text:isBrahmin||isLandlord?'Quietly transfer property to male relatives — lock in the coparcenary before the law changes':'Accept the setback. Work toward the next round of reform.',
+         cons:'The Court is reluctant to interfere with legislative timelines, and your petition is dismissed at the threshold. But the arguments you place on record, that personal law reform is itself a constitutional imperative under Articles 14 and 15, are cited in later litigation, including the Mary Roy line of cases and eventually in Vineeta Sharma v. Rakesh Sharma in 2020.',
+         jnl:'Filed a writ petition challenging the deferral of personal law reform.'},
+        {text:isBrahmin||isLandlord?'Quietly partition and transfer ancestral property to male coparceners before any new succession statute takes effect':'Accept the setback. Build the constituency for the next round of reform',
          fx:isBrahmin||isLandlord?{W:10,J:-5,P:0,C:0}:{W:0,J:3,P:0,C:5},
          out:isBrahmin||isLandlord?'bad':'mixed',
-         cons:isBrahmin||isLandlord?'Many landlords do exactly this. Property is restructured. When the acts pass, the legal position is already locked in favour of the men. The gap between law on paper and property in practice grows wider.'
-           :'You accept the long game. Partial acts will help some people. The full vision will come — if you keep working.',
-         jnl:isBrahmin||isLandlord?'Transferred property to male relatives before the Acts passed.':'Accepted the setback and committed to long-term reform.'},
+         cons:isBrahmin||isLandlord?'A great many propertied households do exactly this between 1952 and 1956. Family settlements are drawn up, partitions are recorded with the Sub-Registrar, and the legal position is locked in favour of the male coparceners well before the new Acts come into force. The gap between the statute on paper and property in practice widens with every transfer deed signed.'
+           :'You accept the long game. The four split Acts will move some part of the reform forward. The full vision Ambedkar drafted will only return to the floor of Parliament fifty-three years later, in 2005, and only if the constituency for it has been kept alive in the interim.',
+         jnl:isBrahmin||isLandlord?'Restructured family property before the 1956 Acts came into force.':'Accepted the setback and committed to a long campaign.'},
       ]
     },
     {// ERA 2
-      narration:`The Hindu Succession Act, 1956 is passed. It is a landmark — and a compromise. Section 14 gives women absolute ownership of any property they hold. Widows and daughters are Class I heirs. But Section 6 preserves the Mitakshara coparcenary intact. Daughters are not coparceners. The ancestral property — the real wealth — remains male.`,
+      narration:`The Hindu Succession Act, 1956 is enacted. It is at once a landmark and a compromise. Section 14 abolishes the limited estate and vests absolute ownership in Hindu women. Widows, sons and daughters all become Class I heirs in respect of self-acquired property. But Section 6 leaves the Mitakshara coparcenary standing. Daughters are not coparceners by birth. The bulk of the country's ancestral wealth continues to pass by survivorship through the male line.`,
       dialogue:[
-        {icon,name:nameTag,tag:'Reading the Act',speech:isW
-          ?(isDalit?`Section 14 gives you absolute ownership — of the little you have. But the coparcenary survives. The ancestral land that dominant castes hold in joint family stays out of your reach. The law gives you a right without giving you anything to inherit.`
-          :`Section 14 is real — your property is absolutely yours. No more widow's estate that reverts to the family. You are a Class I heir. But look at Section 6. The ancestral land — the real wealth — stays in the coparcenary. Men sharing what they were already going to share.`)
-          :(isBrahmin&&isLandlord?`Section 6 is intact. The coparcenary survives. Survivorship among male coparceners — preserved. Agricultural land — partially exempted. You have held the most important ground.`
-          :isActivist?`Section 14 is a genuine gain for women who already have property. But Section 6 is the gaping hole. The coparcenary — holding most of the wealth — is untouched. Ambedkar was right: they kept the shell and threw out the substance.`
-          :`The Act is passed. You try to understand what it means for you specifically.`),
+        {icon,name:nameTag,tag:'Reading the bare Act',speech:isW
+          ?(isDalit?`Section 14 vests absolute ownership in you, but only of the little you actually hold. The coparcenary in dominant-caste households survives Section 6 untouched. Your community has been kept off agricultural land for generations, so the statute hands you a right of succession without anything to succeed to.`
+          :`Section 14 is the genuine gain. The limited estate is gone, your property is absolutely yours, and you are a Class I heir to your husband and your father in respect of separate property. But Section 6 is the cost of the compromise. Ancestral land, the real wealth in this economy, continues to pass by survivorship among male coparceners only.`)
+          :(isBrahmin&&isLandlord?`Section 6 is intact. The Mitakshara coparcenary survives. Survivorship among male coparceners is preserved word for word. Section 4(2) exempts agricultural land in many states from the operation of the Act. You have held the most important ground in the drafting committee.`
+          :isActivist?`Section 14 is a genuine advance for women who already hold property. But Section 6 is the gaping hole in the statute. The coparcenary, which holds most of the country's joint family wealth, has been left untouched. Ambedkar was right. They have kept the shell of the reform and discarded its substance.`
+          :`The Hindu Succession Act has now received the President's assent. You sit down with the bare act and try to read what it actually means for your household.`),
           type:isW?'player-speech':(isBrahmin&&isLandlord?'enemy-speech':'default')},
       ],
-      doc:{label:'Hindu Succession Act, 1956 — Key Sections',text:`<strong>§ 8</strong>  — Class I heirs include widow, sons, daughters (from separate property).\n<strong>§ 14</strong> — Any property held by a Hindu female is her <em>absolute</em> property.\n<strong>§ 6</strong>  — <em>Mitakshara coparcenary preserved.</em> Daughters are NOT coparceners.\n<strong>§ 4(2)</strong> — Agricultural land partially exempted in many states.`},
-      prompt:'The Act is law. What do you do with what you have?',
+      doc:{label:'Hindu Succession Act, 1956. Key sections',text:`<strong>Section 8.</strong> Class I heirs to a Hindu male dying intestate include the widow, sons and daughters from his separate property.\n<strong>Section 14.</strong> Any property held by a Hindu female is to be held by her as her <em>absolute</em> property.\n<strong>Section 6.</strong> <em>The Mitakshara coparcenary is preserved.</em> Daughters do not acquire coparcenary status by birth.\n<strong>Section 4(2).</strong> Agricultural land is partially exempted from the Act in several states by saving local tenancy laws.`},
+      prompt:'The Act is now law. What do you do with the rights it gives you?',
       choices:[
-        {text:isW?'Assert rights under Section 14 — claim absolute ownership in court':(isActivist?'Document the gap between Section 6 and Ambedkar\'s vision — build the case for reform':'Study Section 6 and understand what has been preserved'),
+        {text:isW?'File a suit asserting absolute ownership under Section 14 against the in-laws who continue to treat your property as a limited estate':(isActivist?'Document the gap between Section 6 and Ambedkar\'s 1948 draft and start building the law-reform case':'Read Section 6 alongside Section 14 and work out exactly what has been preserved'),
          fx:isW?{W:8,J:5,P:0,C:0}:(isActivist?{W:0,J:10,P:5,C:3}:{W:0,J:5,P:0,C:0}),
          out:'good',
-         cons:isW?'Your in-laws contest your ownership. But Section 14 is clear. The judge rules in your favour — your property is absolutely yours. A small but real victory.'
-           :(isActivist?'You write articles, document cases. The 174th Law Commission Report in 2000 will cite arguments like yours. The intellectual foundation for 2005 is being laid — here, now, in 1956.'
-           :'You understand: Section 6 is the fortress. Those who designed this compromise knew exactly what they were doing.'),
-         jnl:isW?'Won property rights under Section 14.':(isActivist?'Began documenting the gap between vision and Act.':'Studied the implications of Section 6.')},
-        {text:isBrahmin&&isLandlord?'Use Section 6 to structure family property — minimise what passes to daughters and widows':(isW?'Challenge Section 6 — demand coparcenary rights in court':'Organise awareness of women\'s new rights at community level'),
+         cons:isW?'Your in-laws contest the suit and claim a customary reversion. The trial court reads Section 14(1) at face value and rules that the property is absolutely yours, and that any earlier limited estate has been enlarged by operation of the statute. It is a small case in the cause list, but the principle behind it eventually anchors the line that runs through V. Tulasamma v. Sesha Reddy and beyond.'
+           :(isActivist?'You write articles in legal journals and brief members of the Bar. The arguments you record now feed straight into the 174th Report of the Law Commission of India in 2000, and from there into the 2005 amendment. The intellectual foundation for the next round of reform is being laid here, in 1956.'
+           :'You understand the architecture of the compromise. Section 14 opens the door for women in respect of separate property. Section 6 keeps the coparcenary closed. The drafters knew exactly what each section would protect and what each section would surrender.'),
+         jnl:isW?'Won absolute ownership under Section 14 of the Hindu Succession Act.':(isActivist?'Began documenting the gap between Ambedkar\'s draft and the 1956 Act.':'Studied Section 6 of the Hindu Succession Act in full.')},
+        {text:isBrahmin&&isLandlord?'Use Section 6 and the HUF tax regime to restructure family property and minimise what passes to daughters and widows on intestacy':(isW?'File a writ challenging Section 6 as discriminatory under Articles 14 and 15 of the Constitution':'Run community awareness sessions on Sections 8 and 14 in local languages, so women near you know what they are entitled to'),
          fx:isBrahmin&&isLandlord?{W:12,J:-8,P:5,C:0}:(isW?{W:0,J:-5,P:0,C:3}:{W:0,J:8,P:3,C:5}),
          out:isBrahmin&&isLandlord?'bad':(isW?'bad':'good'),
-         cons:isBrahmin&&isLandlord?'Your lawyer structures the HUF carefully. The income tax status is preserved. Daughters and widows get only what you have already "separated." The Act applies to crumbs.'
-           :(isW?'Courts see Section 6 as explicit legislative intent. Your case is dismissed. The path to coparcenary rights is closed — until Parliament opens it.'
-           :'You hold meetings, translate the Act into local languages. Ten years later, women in your area know their rights.'),
-         jnl:isBrahmin&&isLandlord?'Structured family HUF to protect property from reform.':(isW?'Lost a court challenge on coparcenary rights.':'Began community awareness work on the new Act.')},
+         cons:isBrahmin&&isLandlord?'Your tax counsel structures the Hindu Undivided Family carefully. The HUF status is preserved, the income tax assessment continues in joint name, and any partition that does occur leaves daughters and widows with only the smallest share that the statute strictly demands. The Act applies in name. In practice, it applies to crumbs.'
+           :(isW?'The High Court treats Section 6 as a deliberate legislative choice and refuses to read coparcenary rights into it on equality grounds. Your petition is dismissed. The doctrinal path to a daughter\'s coparcenary status will remain closed until Parliament itself opens it in 2005.'
+           :'You hold ward meetings, translate Sections 8 and 14 into Marathi, Kannada and Telugu, and walk women through their rights step by step. Ten years from now, women in your area will know how to file a Section 14 claim, even if their lawyers do not always raise it for them.'),
+         jnl:isBrahmin&&isLandlord?'Restructured the HUF to limit succession claims by daughters and widows.':(isW?'Lost a writ challenge to Section 6 under Articles 14 and 15.':'Built community legal literacy on the Hindu Succession Act.')},
       ]
     },
     {// ERA 3
-      narration:`Four decades pass. Courts interpret the Act inconsistently. States begin to act. Kerala abolishes the coparcenary in 1975. Andhra Pradesh gives daughters coparcenary rights in 1985. Tamil Nadu in 1989. Maharashtra and Karnataka in 1994. But UP, Bihar, and Rajasthan have no amendment. The same country has different laws for daughters on different sides of a state border.`,
+      narration:`Four decades pass between the Act and the next round of reform. The High Courts interpret Section 6 inconsistently. States begin to act on their own. Kerala abolishes the coparcenary altogether in 1975 by the Joint Family System Abolition Act. Andhra Pradesh writes daughters into the coparcenary by an amendment in 1985. Tamil Nadu follows in 1989. Maharashtra and Karnataka follow in 1994. But Uttar Pradesh, Bihar, Rajasthan and Madhya Pradesh do not move at all. The same Hindu woman has different succession rights depending on which side of a state border she happens to be born on.`,
       dialogue:[
-        {icon:'LC',name:'Law Commission of India',tag:'174th Report, 2000',speech:`The exclusion of daughters from coparcenary rights is a serious anomaly. A daughter in Maharashtra has rights her sister in Haryana does not. This is not acceptable under a constitutional guarantee of equality. We recommend national reform.`,type:'default'},
-        {icon,name:nameTag,tag:'Your situation in the 1990s',speech:isW&&isSouth?`You live in a state that acted ahead of the centre. The amendment gives you coparcenary rights here — rights your sisters in northern states don't have.`
-          :isW&&isNorth?`You live in ${locLabel()}. Andhra has the amendment. Tamil Nadu has it. Maharashtra has it. Your state does not. Same country, different rights, depending on which side of a state border you were born on.`
-          :isDalit?`The law has changed on paper. But the caste-based land distribution that existed before the law has not changed. You can legally inherit. What your family has to pass on is still shaped by generations of exclusion.`
-          :isBrahmin&&isLandlord?`The state amendments are a threat. You have protected the central act. But if your state passes an amendment, the coparcenary opens. You lobby against it.`
-          :`The decades pass. You watch reforms come state by state. The national Act still has Section 6 intact.`,
+        {icon:'LC',name:'Law Commission of India',tag:'174th Report, May 2000',speech:`The continued exclusion of daughters from the Mitakshara coparcenary is a serious anomaly. A daughter in Maharashtra is a coparcener by birth. Her sister in Haryana is not. This patchwork cannot be reconciled with the equality clause of the Constitution. We recommend that Section 6 of the Hindu Succession Act, 1956 be amended at the national level, so that daughters become coparceners by birth in the same manner as sons.`,type:'default'},
+        {icon,name:nameTag,tag:'Your situation in the 1990s',speech:isW&&isSouth?`You live in a state that did not wait for Parliament. The state amendment gives you full coparcenary status by birth, with the same right to demand partition and the same liability for ancestral debt as your brothers. Your sisters in the Hindi belt do not yet have any of this.`
+          :isW&&isNorth?`You live in ${locLabel()}. Andhra Pradesh, Tamil Nadu, Maharashtra and Karnataka have all amended Section 6 in your favour. Your state has not. The Constitution promises equality before the law and equal protection of the laws, but in practice your inheritance rights still depend entirely on which side of a state border you were born on.`
+          :isDalit?`The statute on paper has moved. The caste-based pattern of land holding under it has not. You are now a Class I heir under Section 8, and a coparcener under the state amendment if your state has one, but the actual estate your family has to pass on is still shaped by a hundred years of exclusion from agricultural property.`
+          :isBrahmin&&isLandlord?`The state amendments are a real threat. You held the line on Section 6 at the central level in 1956. If your own state legislature now amends the Act, the coparcenary opens up and the partition suits will follow. You lobby the local MLAs hard against any amendment.`
+          :`Decades pass. Reform travels through the country state by state, in unequal jumps. The central Act, with Section 6 intact, still applies wherever a state has not amended it.`,
           type:'player-speech'},
       ],
-      doc:{label:'State Amendments — Timeline',text:`<strong>1975</strong> — Kerala: Coparcenary abolished.\n<strong>1985</strong> — Andhra Pradesh: Daughters become coparceners.\n<strong>1989</strong> — Tamil Nadu: Daughters become coparceners.\n<strong>1994</strong> — Maharashtra & Karnataka: Daughters become coparceners.\n<strong>2000</strong> — Law Commission 174th Report: Recommends national reform.\n<em>UP, Bihar, Rajasthan, MP — no amendment. Old Section 6 still applies.</em>`},
-      prompt:'Forty years have passed. What has your life in this gap looked like?',
+      doc:{label:'State amendments to Section 6. Timeline',text:`<strong>1975.</strong> Kerala. Joint family system abolished.\n<strong>1985.</strong> Andhra Pradesh. Daughters made coparceners by birth.\n<strong>1989.</strong> Tamil Nadu. Daughters made coparceners by birth.\n<strong>1994.</strong> Maharashtra and Karnataka. Daughters made coparceners by birth.\n<strong>2000.</strong> 174th Report of the Law Commission. National reform recommended.\n<em>Uttar Pradesh, Bihar, Rajasthan and Madhya Pradesh. No amendment. The original Section 6 still applies.</em>`},
+      prompt:'Forty years have passed inside this gap. What has your life inside it looked like?',
       choices:[
-        {text:isW&&isSouth?'Assert your coparcenary rights under the state amendment':isW?'File a petition to the Law Commission demanding national reform':isActivist?'Help draft the Law Commission\'s 174th Report recommendations':isBrahmin&&isLandlord?'Lobby your state legislature to resist passing an amendment':'Build community structures to support women asserting their rights',
+        {text:isW&&isSouth?'File a partition suit and assert full coparcenary rights under the state amendment':isW?'Petition the Law Commission and the Standing Committee for a national amendment to Section 6':isActivist?'Brief the Law Commission of India and contribute directly to the 174th Report':isBrahmin&&isLandlord?'Lobby your state legislature to resist any amendment to Section 6':'Build legal literacy at the village and ward level so that women know how to enforce the Sections of the Act that already favour them',
          fx:isW&&isSouth?{W:10,J:8,P:0,C:0}:isW?{W:0,J:10,P:5,C:3}:isActivist?{W:0,J:12,P:8,C:3}:isBrahmin&&isLandlord?{W:8,J:-5,P:8,C:0}:{W:0,J:8,P:3,C:5},
          out:isW&&isSouth?'good':isBrahmin&&isLandlord?'mixed':'good',
-         cons:isW&&isSouth?'You file for your share. Your brothers contest. But the state amendment is clear — you are a coparcener. After three years of litigation, you receive your share.'
-           :isW?'Your petition joins hundreds of others. The 174th Report recommends exactly what you asked for. The pressure is building.'
-           :isActivist?'The 174th Report recommends national coparcenary rights for daughters. Your arguments are in its footnotes. Parliament will act on them in five years.'
-           :isBrahmin&&isLandlord?'Your state holds off. Section 6 remains intact here. But the intellectual tide has turned — it is harder to argue for exclusion when the Law Commission has called it unconstitutional.'
-           :'You have spent decades translating law into reality for people who cannot afford lawyers. It is invisible work. It is essential work.',
-         jnl:isW&&isSouth?'Won coparcenary rights under state amendment.':isW?'Filed petition to Law Commission for national reform.':isActivist?'Contributed to the Law Commission\'s 174th Report.':isBrahmin&&isLandlord?'Lobbied state against the amendment.':'Spent decades building community legal literacy.'},
-        {text:'Take the inequality to the Supreme Court — argue Section 6 violates Articles 14 and 15',
+         cons:isW&&isSouth?'You file a partition suit in the District Court. Your brothers contest, raise customary defences, and ask for the state amendment to be read down. The state amendment is clear: a daughter is a coparcener by birth, with the same rights and liabilities as a son. After three years of litigation, the court grants you your one-share.'
+           :isW?'Your petition is one of hundreds that reach the Law Commission. The 174th Report, when it comes out in May 2000, recommends exactly the amendment you asked for. The political pressure required for Parliament to actually act on it is now finally building.'
+           :isActivist?'The 174th Report recommends national coparcenary rights for daughters and a fresh look at Section 4(2) of the Act in respect of agricultural land. Your arguments and your case studies appear in its footnotes. Parliament will pass the Hindu Succession (Amendment) Act, 2005 within five years on the basis of this Report.'
+           :isBrahmin&&isLandlord?'Your state holds off on amending Section 6. The original section continues to apply locally, and your family settlement remains intact for now. But the intellectual tide has turned. Once the Law Commission has called the exclusion unconstitutional in print, it becomes harder for your bloc to defend it on the floor of the House.'
+           :'You spend years walking women through the Act, section by section, in their own languages. It is unglamorous work. It is also the work that decides whether the statute on paper ever becomes a right anyone can actually enforce.',
+         jnl:isW&&isSouth?'Won coparcenary status under a state amendment.':isW?'Petitioned the Law Commission for a national amendment to Section 6.':isActivist?'Contributed to the 174th Report of the Law Commission.':isBrahmin&&isLandlord?'Lobbied against any state amendment to Section 6.':'Built community legal literacy on the Hindu Succession Act.'},
+        {text:'File a writ petition in the Supreme Court arguing that Section 6 violates Articles 14 and 15 of the Constitution',
          fx:{W:-8,J:5,P:3,C:3},out:'mixed',
-         cons:'The Supreme Court consistently upholds Section 6 in this era. It sees the coparcenary as a valid legislative choice, not a constitutional violation. Your case is dismissed. But the arguments will resurface in Vineeta Sharma v. Rakesh Sharma in 2020.',
-         jnl:'Challenged Section 6 at the Supreme Court — case dismissed but arguments preserved.'},
-        {text:isDalit?'Focus on land reform — actual land access matters more than succession rules':'Accept the state patchwork and wait for the centre to act nationally',
+         cons:'The Supreme Court in this period consistently treats Section 6 as a permissible legislative choice, not as a constitutional violation. Your petition is dismissed in line with that view. The arguments you place on record nonetheless survive in the law reports, and they re-emerge directly in the bench that decides Vineeta Sharma v. Rakesh Sharma in 2020.',
+         jnl:'Challenged Section 6 in the Supreme Court. Petition dismissed, arguments preserved on record.'},
+        {text:isDalit?'Focus on land reform under the Tenancy Acts and the Ceiling Acts. Actual access to land matters more than succession rules over property your community does not yet hold':'Accept the state patchwork for now and prepare the ground for national reform when Parliament finally moves',
          fx:isDalit?{W:3,J:5,P:0,C:8}:{W:0,J:3,P:0,C:5},out:'mixed',
-         cons:isDalit?'You are right that land reform and succession reform are separate battles. But without national succession reform, even redistributed land cannot pass equally to daughters. You need both.'
-           :'The waiting is not passive. You document, organise, build the base. When 2005 comes, the reform has prepared ground to land on.',
-         jnl:isDalit?'Focused on Dalit land rights movement alongside succession reform.':'Waited for national reform while building grassroots support.'},
+         cons:isDalit?'You are right that land reform and succession reform are separate battles, and that succession on its own does nothing for households that own no land to succeed to. But the two have to move together. Without national reform of Section 6, even land redistributed under the Ceiling Acts cannot pass equally to daughters in the next generation.'
+           :'The waiting is not passive at all. You document cases, organise women in panchayat meetings, brief MPs, and keep the constituency for reform alive between 2000 and 2005. When the amendment passes, it lands on ground that has been prepared for it.',
+         jnl:isDalit?'Worked on Dalit land rights alongside succession reform.':'Built grassroots support while waiting for national reform.'},
       ]
     },
     {// ERA 4
-      narration:`The Hindu Succession (Amendment) Act, 2005 is passed. Section 6 is rewritten. Daughters are coparceners by birth — the same rights and liabilities as sons. They can demand partition. They can be karta. In 2020, the Supreme Court in Vineeta Sharma v. Rakesh Sharma rules the amendment applies retroactively.`,
+      narration:`Parliament finally passes the Hindu Succession (Amendment) Act, 2005. Section 6 is rewritten from the ground up. The daughter of a coparcener becomes a coparcener in her own right, by birth, in the same manner as the son. She acquires the same rights in the coparcenary property and is subject to the same liabilities. She can demand partition of the joint family estate. She can be the karta. In 2020, a three-judge bench of the Supreme Court in Vineeta Sharma v. Rakesh Sharma settles the unresolved question of retroactivity in her favour.`,
       dialogue:[
-        {icon:'JM',name:'Justice Arun Mishra',tag:'Supreme Court, Vineeta Sharma v. Rakesh Sharma, 2020',speech:`A daughter remains a loving daughter throughout life. The right of a daughter accrues by birth. It is not dependent on whether the father was alive on the date of amendment.`,type:'default'},
-        {icon,name:nameTag,tag:'Your moment',speech:isW&&(isDalit||isPeasant)?`The amendment is passed. You have the right — on paper. But you live in ${locLabel()}. You have no lawyer. You may not even know about the Vineeta Sharma ruling. The land records office is hours away. The law has changed. Your life has not yet.`
-          :isW?`Fifty-seven years after Independence, you are finally a coparcener by birth. The same rights as your brother. You can demand partition. You are not an heir by someone else's grace — you are an heir by birth.`
-          :isBrahmin&&isLandlord?`Section 6 has fallen. Your daughters — and your brothers' daughters — are coparceners now. What you spent fifty years defending has changed.`
-          :`The amendment is here. Fifty-seven years late. What it means for you depends entirely on where you stand.`,
+        {icon:'JM',name:'Justice Arun Mishra',tag:'Supreme Court, Vineeta Sharma v. Rakesh Sharma (2020) 9 SCC 1',speech:`The provisions of the substituted Section 6 confer status on a daughter as a coparcener by birth. The right of a daughter, once she is born, accrues by reason of birth itself. It is not dependent on whether her father was alive on the date the amendment came into force.`,type:'default'},
+        {icon,name:nameTag,tag:'Your moment',speech:isW&&(isDalit||isPeasant)?`The amendment is on the statute book. The right exists, in writing, at the level of the bare act. But you live in ${locLabel()}. You have no standing counsel. You have not heard of Vineeta Sharma. The Tehsildar's office and the District Court are both a day's travel away. The law has changed. The shape of your life has not yet caught up with it.`
+          :isW?`Fifty-seven years after Independence, you have become a coparcener by birth in the joint family estate. You hold the same rights and the same liabilities as your brother. You can file for partition. You are no longer an heir by anyone's grace. You are an heir by operation of law.`
+          :isBrahmin&&isLandlord?`Section 6 as you knew it has fallen. Your daughters, and your brothers' daughters, and your nieces, are coparceners now in their own right. The settlement you spent fifty years protecting has been rewritten by Parliament in a single section.`
+          :`The amendment is here. Fifty-seven years after Ambedkar drafted it the first time. What it actually means for your household depends entirely on where you stand in the family ledger.`,
           type:isW?'player-speech':(isBrahmin&&isLandlord?'enemy-speech':'default')},
       ],
-      doc:{label:'HSA Amendment 2005 + Vineeta Sharma 2020',text:`<strong>New § 6(1)</strong>: The daughter of a coparcener shall by birth become a coparcener in her own right in the same manner as the son.\n\n<strong>Vineeta Sharma (2020)</strong>: Rights are retroactive. Birth date, not father's death date, governs.\n\n<em>This is what Ambedkar proposed in 1948. It took 57 years.</em>`},
-      prompt:'The amendment has passed. This is your final choice.',
+      doc:{label:'2005 amendment and Vineeta Sharma (2020)',text:`<strong>Substituted Section 6(1).</strong> "On and from the commencement of the Hindu Succession (Amendment) Act, 2005, in a Joint Hindu family governed by the Mitakshara law, the daughter of a coparcener shall, by birth, become a coparcener in her own right in the same manner as the son."\n\n<strong>Vineeta Sharma v. Rakesh Sharma (2020).</strong> Three-judge bench. Rights under substituted Section 6 are retroactive. The decisive date is the date of birth, not the date of the father's death.\n\n<em>This is, in effect, what Ambedkar drafted into the Hindu Code Bill in 1948. Parliament took fifty-seven years to enact it.</em>`},
+      prompt:'The amendment has passed. This is your final move on the record.',
       choices:[
-        {text:isW?'Assert your coparcenary rights — file for partition of ancestral property':isActivist?'Declare victory — and immediately turn to what remains undone':isDalit?'Demand the law be enforced where you live — with legal aid and awareness':isBrahmin&&isLandlord?'Accept the amendment — restructure the estate to comply':'Reflect on the full arc — what was won, what was lost',
+        {text:isW?'Assert your rights as a coparcener by birth and file for partition of the ancestral estate':isActivist?'Declare the amendment a victory in the press, and immediately turn to what is still left undone':isDalit?'Push for actual enforcement of the amendment in your district through legal aid clinics and panchayat-level outreach':isBrahmin&&isLandlord?'Accept the amendment, restructure the family settlement to comply with the new Section 6, and put the new shares on record':'Step back and read the full arc of the statute, from the 1948 draft to the 2020 ruling, on its own terms',
          fx:isW?{W:15,J:10,P:5,C:0}:isActivist?{W:0,J:10,P:8,C:5}:isDalit?{W:5,J:10,P:3,C:8}:isBrahmin&&isLandlord?{W:-10,J:8,P:0,C:0}:{W:3,J:8,P:3,C:3},
          out:isW?'good':isBrahmin&&isLandlord?'mixed':'good',
-         cons:isW?'You file for partition. Your brothers contest. But the law is now unambiguous — you are a coparcener by birth. Three years later, you have your share. Fifty-seven years after it should have happened.'
-           :isActivist?'You write the victory and the gap in the same paragraph. Coparcenary rights — won. Uniform civil code — absent. Caste in succession — unaddressed. Tribal customary law — still outside the Act.'
-           :isDalit?'You work with legal aid clinics to reach Dalit women who don\'t know about the amendment. Awareness is the bridge between right and reality. It is the slowest and most necessary work.'
-           :isBrahmin&&isLandlord?'You comply. The law is the law. Your daughters take their shares. Watching them manage property, you find yourself unexpectedly proud.'
-           :'You think of Ambedkar. He proposed this in 1948. Parliament passed it in 2005. Fifty-seven years of compromise, litigation, and pressure — to reach what he saw clearly in one draft.',
-         jnl:isW?'Filed for and won coparcenary rights under the 2005 amendment.':isActivist?'Celebrated 2005 and documented what remains undone.':isDalit?'Worked to bridge the gap between legal right and access for Dalit women.':isBrahmin&&isLandlord?'Accepted the amendment and restructured the family estate.':'Reflected on the full arc from 1947 to 2005.'},
-        {text:'Challenge the retroactive application — argue daughters whose fathers died before 2005 cannot claim',
+         cons:isW?'You file a partition suit in the District Court. Your brothers contest. The Court applies substituted Section 6 and the Vineeta Sharma rule on retroactivity. Three years later, the preliminary decree comes through and you receive your one-share in the ancestral estate. Fifty-seven years late, but on the record at last.'
+           :isActivist?'You write the victory and the gap in the same article. Coparcenary status for daughters: won. A uniform civil code: still absent. Caste-based exclusion from agricultural land: still unaddressed. Section 2(2) of the Act and the position of Scheduled Tribes: still outside the statute. The reform has moved one step. The next steps are visible from here.'
+           :isDalit?'You work with district legal services authorities and women\'s collectives to reach Dalit women who have never heard of the 2005 amendment. Outreach is the bridge between a right on paper and a right anyone can actually enforce. It is slow, it is not glamorous, and it is the only thing that converts statutes into lived rights.'
+           :isBrahmin&&isLandlord?'You comply with the new Section 6. The family settlement is redrawn. Your daughters and nieces are recorded as coparceners in their own right and take their shares. Watching them administer the estate, you find yourself, against expectation, quietly proud.'
+           :'You read Ambedkar\'s 1948 draft against the 2005 statute and the 2020 ruling, side by side. Each deferral, in 1951, in 1956, in the state-by-state patchwork, in the long silence between 2000 and 2005, was a political choice. Reform was not delayed by time. It was delayed by the people who benefited from the delay.',
+         jnl:isW?'Filed for and won partition under substituted Section 6.':isActivist?'Recorded the 2005 amendment as a victory and named what is still outstanding.':isDalit?'Built enforcement infrastructure for Dalit women under the 2005 amendment.':isBrahmin&&isLandlord?'Restructured the family settlement to comply with the new Section 6.':'Read the full statutory arc from 1948 to 2020.'},
+        {text:'File a challenge to the retroactive operation of the amendment, on the argument that daughters whose fathers died before 9 September 2005 should not be entitled to coparcenary status',
          fx:{W:-5,J:-8,P:0,C:5},out:'bad',
-         cons:'The Supreme Court in Vineeta Sharma (2020) settles this definitively. The amendment applies retroactively. Your challenge fails — and in failing, clarifies the law for millions.',
-         jnl:'Challenged retroactive application — lost. Vineeta Sharma (2020) settled the question.'},
-        {text:'Ask the larger question: why did it take 57 years?',
+         cons:'The Supreme Court in Vineeta Sharma v. Rakesh Sharma (2020) 9 SCC 1 settles the question against you. The right under substituted Section 6 accrues by birth, and is not contingent on the date of the father\'s death. Your challenge fails. In failing, it clarifies the law for millions of daughters across the country.',
+         jnl:'Challenged the retroactive operation of substituted Section 6. Lost in Vineeta Sharma (2020).'},
+        {text:'Step back and ask the larger question. Why did this take fifty-seven years?',
          fx:{W:0,J:5,P:3,C:8},out:'mixed',
-         cons:'This is Ambedkar\'s question. Each deferral was a political choice — 1951, 1956, the state patchwork, the missing uniform civil code. Reform is not delayed by time. It is delayed by those who benefit from delay.',
-         jnl:'Asked why 57 years passed between Ambedkar\'s vision and the law. Found no comfortable answer.'},
+         cons:'This is Ambedkar\'s question, and it does not have a comfortable answer. Each deferral, in 1951, in 1956, in the long state-by-state patchwork between 1975 and 1994, and in the gap between the 174th Report in 2000 and the actual amendment in 2005, was a political choice. Each compromise served a constituency that was already inside the rooms where the Bill was being drafted. The statute does not delay itself. People delay it.',
+         jnl:'Asked why fifty-seven years passed between the 1948 draft and the 2005 amendment.'},
       ]
     },
   ];
@@ -808,14 +749,18 @@ function updateJournal(){
 function showEnd(){
   showScreen('s-end');
   const{W,J,P,C}=G.stats;
-  const score=Math.round(J*0.4+C*0.3+W*0.2+P*0.1);
-  let grade,gc,title,sub,verdict;
-  if(score>=70){grade='A';gc='grade-A';title='Champion of Reform';sub='Your journey mirrors Ambedkar\'s vision';verdict='You navigated five eras of compromise with clarity and purpose. Your Justice and Community scores reflect a life lived close to the stakes of reform. You understood, as Ambedkar did, that legal change and social change must travel together.';}
-  else if(score>=50){grade='B';gc='grade-B';title='Voice in the Debate';sub='You shaped the reform, even in partial ways';verdict='You made choices that mattered — not always the most radical, not always the safest. You understood the gap between Ambedkar\'s vision and the law as enacted, and contributed to the slow work of making rights real.';}
-  else if(score>=30){grade='C';gc='grade-C';title='Witness to Compromise';sub='The law changed around you, not because of you';verdict='You watched the reform unfold from a comfortable distance. Wealth and Political Power protected you from urgency. The gap between vision and reality was always someone else\'s problem. It wasn\'t — it never is.';}
-  else{grade='D';gc='grade-D';title='Beneficiary of Delay';sub='Reform was slow — and you helped keep it that way';verdict='Your choices consistently prioritised preserving existing structures over extending justice. The Hindu Succession Act\'s compromises served your interests. History has a longer memory than a lifetime.';}
-  document.getElementById('end-grade').textContent=grade;
-  document.getElementById('end-grade').className='end-grade '+gc;
+  // Compromise Impact Index. 1% = least affected, 100% = most affected by the compromise.
+  // Higher urgency-of-reform-needed (C) and Justice access (J, awareness of and engagement with rights)
+  // raise the index. Higher Wealth (W) and Political influence (P) insulate the character from the
+  // compromise and lower the index.
+  let raw = C*0.40 + J*0.30 + (100-W)*0.10 + (100-P)*0.20;
+  let pct = Math.max(1, Math.min(100, Math.round(raw)));
+  let title,sub,verdict;
+  if(pct>=75){title='Bore the Weight of the Compromise';sub='The gap between the law on paper and your daily life was wide and you lived inside it';verdict='Your character lived almost entirely inside the gap that Section 6 left open between 1956 and 2005. Limited inheritance rights, weak political access, and high reform urgency meant every deferral by Parliament was felt directly in your household. The Compromise Impact Index of '+pct+'% reflects a life shaped, very nearly in full, by what the statute refused to deliver in time.';}
+  else if(pct>=50){title='Lived Inside the Gap';sub='The compromise reached your household more often than it spared it';verdict='Your character was substantially affected by the compromise. You felt the absence of equal coparcenary rights, you watched the state-by-state patchwork between 1975 and 1994, and you waited for a national amendment that arrived only in 2005. The Compromise Impact Index of '+pct+'% reflects a life in which the slow pace of reform mattered, often, in concrete ways.';}
+  else if(pct>=25){title='Touched but Not Defined';sub='The compromise reached you in episodes rather than in the everyday';verdict='Your character was affected by the compromise in moments rather than across the whole arc. Some inheritance and partition questions reached you, others passed your household by. The Compromise Impact Index of '+pct+'% reflects a life that the gap in the statute shaped in parts, but did not control.';}
+  else{title='Insulated from the Compromise';sub='Wealth, political access, or both kept the law\'s gap at a distance';verdict='Your character was largely insulated from the compromise. Property held in male coparcener names, political proximity to the drafters, and low reform urgency meant the slow pace of personal law reform served your settlement rather than burdening it. The Compromise Impact Index of '+pct+'% reflects a life that the unfinished statute did not greatly disturb.';}
+  document.getElementById('end-meter').textContent=pct+'%';
   document.getElementById('end-title').textContent=title;
   document.getElementById('end-subtitle').textContent=sub;
   document.getElementById('end-verdict').textContent=verdict;

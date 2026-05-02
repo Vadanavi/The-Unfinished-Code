@@ -42,10 +42,6 @@ function App() {
     <button className="game-btn"> Game</button>
   </a>
 
-  <a href="/video.html" target="_blank">
-    <button className="game-btn"> Video</button>
-  </a>
-
   <a href="/flowchart.html" target="_blank">
     <button className="game-btn"> Timeline</button>
   </a>
